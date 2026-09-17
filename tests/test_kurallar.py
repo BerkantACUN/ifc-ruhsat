@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import ifcopenshell
 import ifcopenshell.api.project
@@ -42,16 +43,16 @@ def test_kotu_model_bilinen_hatalari_yakalar(kotu_dosya):
         "isim-kategori",
         "koordinat-epsg",
         "ek6-malzeme",
-        "ek6-ozellik",
+        "ek6-set",
         "kat-bagi",
     } <= hata
     uyari = kodlar(rapor, "uyari")
     assert {"yinelenen-eleman", "on-tanimli-tip", "dosya-adi", "mahal-ortusme", "kat-kotu"} <= uyari
     assert {"mahal-no-bicim", "mahal-isim-bos", "mahal-govde"} <= hata
-    # Duvarın kaldırılan Pset_WallCommon'ı iki ayrı özellik bulgusu üretir, ikisi de EK-9 m.9'a gider.
-    duvar_bulgulari = [b for b in rapor.bulgular if b.kod == "ek6-ozellik" and "IfcWall" in b.mesaj]
-    assert {b.ek9 for b in duvar_bulgulari} == {9}
-    assert all(b.varliklar for b in duvar_bulgulari)
+    # Duvarın kaldırılan Pset_WallCommon'ı set olarak tek bulgu üretir, iki özelliği de sayar.
+    duvar_bulgulari = [b for b in rapor.bulgular if b.kod == "ek6-set" and "IfcWall" in b.mesaj]
+    assert len(duvar_bulgulari) == 1 and duvar_bulgulari[0].ek9 == 9
+    assert "IsExternal, FireRating" in duvar_bulgulari[0].mesaj and duvar_bulgulari[0].varliklar
     kararlar = {r["no"]: r["karar"] for r in ek9.satirlar(rapor)}
     assert kararlar[5] == "Hayır" and kararlar[6] == "Hayır" and kararlar[9] == "Hayır"
     assert kararlar[15] == "Hayır" and kararlar[17] == "Hayır"
@@ -179,3 +180,18 @@ def test_ek6_tum_zorunlu_siniflar_ve_semayla_uyum():
         if t["onTanimliTipler"]:
             enum = set(schema.declaration_by_name(t["ifc"] + "TypeEnum").enumeration_items())
             assert set(t["onTanimliTipler"]) <= enum, t["ifc"]
+
+
+def test_disiplin_dosya_adindan(tmp_path):
+    from ifc_ruhsat.kontrol import disiplini_sec
+
+    assert disiplini_sec(Path("123456_00_MK_GNEL_MD_BIM_000_01_000.ifc"), None) == "MK"
+    assert disiplini_sec(Path("bina.ifc"), None) == "MM"
+    assert disiplini_sec(Path("bina.ifc"), "st") == "ST"
+    # Mekanik modelde mahal yokluğu hata değildir.
+    m = iyi_model()
+    for s in m.by_type("IfcSpace"):
+        m.remove(s)
+    yol = kaydet(m, tmp_path, "123456_00_MK_GNEL_MD_BIM_000_01_000.ifc")
+    assert "mahal-var" not in kodlar(kontrol_et(yol), "hata")
+    assert "mahal-var" in kodlar(kontrol_et(yol, "MM"), "hata")

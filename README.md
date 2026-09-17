@@ -92,6 +92,18 @@ Sunucu yalnızca verilen dosyayı okur; ağa hiçbir şey göndermez, hiçbir ş
 
 EK-6'nın 68 zorunlu sınıf tablosunun tamamı nihai Resmî Gazete ekinden sayfa sayfa okunup kodlandı; her öznitelik IFC 4.3 şemasına, her özellik buildingSMART'ın resmî Pset şablonlarına karşı testle doğrulanır. Hangi tablonun hangi sayfadan geldiği: [KAYNAKLAR.md](KAYNAKLAR.md). Geometri kontrolleri (mahal gövdesi, örtüşme, kot) sınır kutusu tabanlıdır — hızlı ve kaba; L biçimli mahallerde yanlış alarm verebilir, bunu bulgu metni de söyler.
 
+## Gerçek modellerde ne çıkıyor
+
+Halka açık üç modelde, hiçbir şey değiştirmeden (bu modeller yönetmelik yokken yapıldı; sonuç "hazırlık ne kadar" sorusunun cevabıdır):
+
+| Model | Şema | Süre | Hata / uyarı | Öne çıkanlar |
+|---|---|---|---|---|
+| buildingSMART resmî IFC 4.3 örneği, [Building-Architecture.ifc](https://github.com/buildingSMART/Sample-Test-Files/tree/main/IFC%204.3.2.0%20(IFC%204.3%20ADD2)/Simple-Scene) (SketchUp, 21 varlık) | IFC4X3 | < 1 s | 32 / 5 | Koordinat sistemi EPSG:32760 (Türkiye dilimi değil); 2 vekil sınıf; mahal numaraları ve `TREpys_` setleri yok; Pset_BuildingCommon boş |
+| Revit 2021 konut, [Ifc4_Revit_ARC.ifc](https://github.com/youshengCode/IfcSampleFiles) (13 MB, 522 varlık) | IFC4 | 1,7 s | 47 / 12 | IFC 4.3 değil; 66 IfcBuildingElementProxy; 511 varlık adı şablon dışı; 47 duvarda FireRating yok; IfcPlate (44 giydirme cephe paneli) yönetmelik listesinde yok; hiç IfcSpace yok; koordinat sistemi yok |
+| IfcOpenShell örnek evi, [Ifc4_SampleHouse.ifc](https://github.com/youshengCode/IfcSampleFiles) (2 MB) | IFC4 | < 1 s | 40 / 9 | IFC4; IfcWallStandardCase (4.3'te kaldırıldı); malzeme adları `Ad_Dayanım` biçiminde değil; 28 elemanda Ön Tanımlı Tip yok |
+
+Ders: bugünkü tipik bir Revit çıktısı ile yönetmeliğin istediği dosya arasındaki fark büyük ama sayılabilir — IFC 4.3'e geçiş, vekil sınıfların sınıflandırılması, isimlendirme şablonu, yangın/kullanım özellikleri ve Türkiye'ye özel parsel/emsal setleri. Araç bu listeyi GlobalId'leriyle veriyor. Bir de yönetmeliğin kendi boşluğu görünüyor: Revit'in giydirme cephe panellerini attığı `IfcPlate` EK-5'in iki listesinde de yok (KAYNAKLAR.md).
+
 ## Yönetmelik ne diyor, kısaca
 
 - Ruhsat eki projeler BIM tabanlı hazırlanır, **IFC 4.3** (TS EN ISO 16739-1) teslim edilir; 2B paftalar modelden üretilip PDF/A verilir (m.4, m.9).

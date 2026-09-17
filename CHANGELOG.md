@@ -2,6 +2,22 @@
 
 Biçim [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), sürümleme [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] — 2026-09-17
+
+Halka açık gerçek modellerle (buildingSMART IFC 4.3 örneği, Revit 2021 konut, IfcOpenShell örnek evi) ilk tur; rapor okunurluğu ve hız.
+
+### Changed
+
+- Bir özellik seti varlıkta hiç yoksa özellik özellik değil set olarak tek bulgu (`ek6-set`); Revit modelinde 17 satır 3 satıra indi. Yanlış sette duran özellik yine ayrı bildirilir.
+- Kot kontrolü (EK-9 m.15) gövde geometrisi yerine yerleşim kotuyla: 13 MB Revit modeli 64 s → 1,7 s. Revit'in kat olmayan seviyeleri için uyarı metni.
+- Sahaya (IfcSite) bağlı elemanlar "kata bağlı değil" hatası yerine uyarı.
+- Disiplin verilmezse EK-2 biçimindeki dosya adından okunur (üçüncü alan), yoksa MM.
+- `--json` çıktısı Windows'ta da UTF-8.
+
+### Added
+
+- README: üç halka açık modelde sonuç tablosu. KAYNAKLAR: yönetmelik listesinde olmayan yaygın sınıflar (IfcPlate) ve Revit üst sınıf/seviye notları.
+
 ## [0.2.0] — 2026-09-17
 
 EK-6'nın tamamı ve geometri kontrolleri.

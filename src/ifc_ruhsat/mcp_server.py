@@ -40,20 +40,20 @@ def model_ozeti(dosya: str) -> dict[str, Any]:
 
 
 @mcp.tool(annotations=SALT_OKUR)
-def yonetmelik_kontrolu(dosya: str, disiplin: str = "MM") -> dict[str, Any]:
+def yonetmelik_kontrolu(dosya: str, disiplin: str | None = None) -> dict[str, Any]:
     """Modeli yönetmeliğe göre denetler: IFC sürümü, Proje/Saha/Bina/Kat iskeleti, EK-5 sınıf
     listesi ve yasak vekil sınıflar, EK-5 isimlendirme (Disiplin-Kategori-Açıklama), EK-6/EK-7
     zorunlu öznitelik ve özellik setleri (TREpys_ dahil), koordinat sistemi (TUREF EPSG:5253–5259),
     kat bağı, yinelenen varlıklar, emsal toplamları. Her bulgu: seviye (hata/uyari/elle/bilgi),
     madde, EK-9 satırı, GlobalId listesi. Checks an IFC model against the Turkish building-permit
-    BIM regulation and returns findings with article references. `disiplin`: EK-2 kodu (MM mimari)."""
+    BIM regulation and returns findings with article references. `disiplin`: EK-2 kodu (MM mimari, ST statik, MK mekanik, EE elektrik); verilmezse dosya adından, yoksa MM."""
     from ifc_ruhsat.kontrol import kontrol_et
 
     return kontrol_et(dosya, disiplin).sozluk()
 
 
 @mcp.tool(annotations=SALT_OKUR)
-def ek9_formu(dosya: str, disiplin: str = "MM") -> str:
+def ek9_formu(dosya: str, disiplin: str | None = None) -> str:
     """EK-9 Model Kalite Kontrol Formu'nu (Tablo 9.1, 21 satır) Markdown olarak üretir; her satır
     Evet / Hayır / Elle ve dayanağıyla. Renders the regulation's model quality-control form
     (Annex 9) for the model as Markdown."""

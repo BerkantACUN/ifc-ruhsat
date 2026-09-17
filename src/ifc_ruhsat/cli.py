@@ -23,7 +23,11 @@ def main(argv: list[str] | None = None) -> int:
 
     k = alt.add_parser("kontrol", help="modeli denetle, bulguları yaz")
     k.add_argument("dosya")
-    k.add_argument("--disiplin", default="MM", help="EK-2 disiplin kodu, varsayılan MM (mimari)")
+    k.add_argument(
+        "--disiplin",
+        default=None,
+        help="EK-2 disiplin kodu (MM, ST, MK, EE…); verilmezse dosya adından, o da yoksa MM",
+    )
     k.add_argument("--json", action="store_true", help="JSON çıktı")
     k.add_argument("--ek9", metavar="DOSYA.md", help="EK-9 formunu Markdown olarak buraya yaz")
 
@@ -32,7 +36,7 @@ def main(argv: list[str] | None = None) -> int:
 
     e = alt.add_parser("ek9", help="EK-9 formunu Markdown olarak yaz (stdout)")
     e.add_argument("dosya")
-    e.add_argument("--disiplin", default="MM")
+    e.add_argument("--disiplin", default=None)
 
     i = alt.add_parser("ids", help="EK-6/EK-7'yi buildingSMART IDS dosyaları olarak üret")
     i.add_argument("--klasor", default="ids")
@@ -40,6 +44,8 @@ def main(argv: list[str] | None = None) -> int:
     alt.add_parser("mcp", help="MCP sunucusunu (stdio) başlat")
 
     a = p.parse_args(argv)
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     if a.komut == "kontrol":
         return _kontrol(a)
     if a.komut == "ozet":
@@ -86,8 +92,6 @@ def _kontrol(a: argparse.Namespace) -> int:
 
 
 def _yazdir(rapor) -> None:
-    if hasattr(sys.stdout, "reconfigure"):
-        sys.stdout.reconfigure(encoding="utf-8")
     o = rapor.ozet()
     print(f"{rapor.dosya} — {rapor.schema}")
     print(f"{o['hata']} hata, {o['uyari']} uyarı, {o['elle']} elle kontrol, {o['bilgi']} bilgi\n")

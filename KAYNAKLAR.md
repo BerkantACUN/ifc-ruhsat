@@ -45,6 +45,13 @@ Tesisat tablolarının ortak deseni: PredefinedType, Name, Tag, `IfcRelAssignsTo
 5. **IfcGroup için "Attribute: Tag"** (Tablo 6.37): IfcGroup'un IFC şemasında Tag özniteliği yoktur; araç yalnızca Name'i denetler.
 6. **Ön Tanımlı Tip listelerinde yazım**: tablolarda "AIR COOLED", "BACKWARD INCLINED CURVED" gibi boşluklu yazımlar şemada "AIRCOOLED", "CENTRIFUGALBACKWARDINCLINEDCURVED" biçimindedir; araç şemayı esas alır.
 
+## Yönetmelik listesinin gerçek modellerle sınandığı yerler
+
+- **IfcPlate** (giydirme cephe panelleri, saclar) EK-5 Tablo 5.1 ve 5.2'de yok; Revit her giydirme cephe panelini IfcPlate olarak dışa aktarır (örnek Revit modelinde 44 adet). Araç bunu "listede yok" uyarısıyla bildirir; ilgili idare EK-2 2.5'teki gibi ek tanım yapana kadar çözüm IfcCurtainWall altında birleştirmek ya da idareyle teyittir.
+- **IfcFlowTerminal / IfcSystem** gibi üst sınıflar: Revit, tipi belirsiz tesisat elemanlarını üst sınıfla dışa aktarır; yönetmelik alt sınıf ister (EK-6 6.1.2). Araç uygun alt sınıfları önerir.
+- **IfcWallStandardCase, IfcSlabElementedCase** vb. IFC4 sınıfları IFC 4.3'te kaldırıldı; IFC4 dosyalarda "listede yok" olarak görünür, IFC 4.3 dışa aktarımıyla kendiliğinden düzelir.
+- **Kat olmayan Revit seviyeleri** (tavan, çatı çizgisi) IfcBuildingStorey olarak çıkarsa kot kontrolü yanlış alarm verir; Revit'te o seviyelerde "Building Story" işareti kaldırılmalı.
+
 ## Doğrulama yöntemi ve sınırı
 
 Ekler taranmış görüntü olduğundan tablolar OCR ile değil, sayfa görüntüsü okunarak elle geçirildi ve şemayla çapraz kontrol edildi (sınıf adları, enum değerleri). Bir yazım hatası gözden kaçmış olabilir; bulursanız sayfa numarasıyla issue açın. Ekler değişirse (Bakanlık düzeltme yayımlarsa) JSON'daki `kaynak` satırı ve bu dosya güncellenir.

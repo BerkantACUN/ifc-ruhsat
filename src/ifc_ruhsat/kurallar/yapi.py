@@ -7,6 +7,8 @@ from __future__ import annotations
 from collections import Counter
 from pathlib import Path
 
+import ifcopenshell.util.element as ue
+
 from ifc_ruhsat import veri
 from ifc_ruhsat.bulgu import Bulgu, varlik_listesi
 from ifc_ruhsat.kurallar.ortak import Baglam, kati, oznitelik
@@ -123,16 +125,15 @@ def _iskelet(b: Baglam) -> list[Bulgu]:
 
 def _kat_bagi(b: Baglam) -> list[Bulgu]:
     """Her yapı elemanı bir kata (ya da katın içindeki bir mekâna) bağlı olmalı."""
-    bagsiz = [
-        e
-        for e in b.varliklar
-        if e.is_a("IfcElement")
-        and not e.is_a("IfcOpeningElement")
-        and not e.is_a("IfcFeatureElement")
-        and kati(e) is None
-    ]
+    bagsiz, sahada = [], []
+    for e in b.varliklar:
+        if not e.is_a("IfcElement") or e.is_a("IfcFeatureElement") or kati(e) is not None:
+            continue
+        kap = ue.get_container(e)
+        (sahada if kap is not None and kap.is_a("IfcSite") else bagsiz).append(e)
+    out = []
     if bagsiz:
-        return [
+        out.append(
             Bulgu(
                 "kat-bagi",
                 "hata",
@@ -143,8 +144,25 @@ def _kat_bagi(b: Baglam) -> list[Bulgu]:
                 varlik_listesi(bagsiz),
                 len(bagsiz),
             )
-        ]
-    return [Bulgu("kat-bagi", "bilgi", "Her yapı elemanı bir kata bağlı.", "EK-9 madde 15", 15)]
+        )
+    if sahada:
+        out.append(
+            Bulgu(
+                "kat-bagi-saha",
+                "uyari",
+                f"{len(sahada)} eleman kata değil doğrudan sahaya (IfcSite) bağlı; çevre düzeni/altyapı "
+                "elemanı değilse bir kata atanmalı.",
+                "EK-9 madde 15",
+                15,
+                varlik_listesi(sahada),
+                len(sahada),
+            )
+        )
+    if not out:
+        out.append(
+            Bulgu("kat-bagi", "bilgi", "Her yapı elemanı bir kata bağlı.", "EK-9 madde 15", 15)
+        )
+    return out
 
 
 def _yinelenen(b: Baglam) -> list[Bulgu]:

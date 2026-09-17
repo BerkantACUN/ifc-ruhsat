@@ -27,10 +27,20 @@ def modeli_ac(yol: str | Path) -> ifcopenshell.file:
     return ifcopenshell.open(str(yol))
 
 
-def kontrol_et(yol: str | Path, disiplin: str = "MM") -> Rapor:
+def disiplini_sec(yol: Path, verilen: str | None) -> str:
+    """Verilmemişse EK-2 biçimindeki dosya adının üçüncü alanından; o da yoksa mimari (MM)."""
+    if verilen:
+        return verilen.upper()
+    from ifc_ruhsat.kurallar.isim import DOSYA_ADI
+
+    m = DOSYA_ADI.match(yol.stem)
+    return m.group(3) if m else "MM"
+
+
+def kontrol_et(yol: str | Path, disiplin: str | None = None) -> Rapor:
     yol = Path(yol)
     model = modeli_ac(yol)
-    b = ortak.Baglam(model=model, dosya_adi=yol.name, disiplin=disiplin)
+    b = ortak.Baglam(model=model, dosya_adi=yol.name, disiplin=disiplini_sec(yol, disiplin))
     rapor = Rapor(dosya=str(yol), schema=model.schema)
     boyut = _boyut(yol.stat().st_size)
     for modul in MODULLER:

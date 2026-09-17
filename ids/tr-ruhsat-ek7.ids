@@ -2,8 +2,8 @@
 <ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
     <info>
         <title>Mimarlık ve Mühendislik Projelerinin Dijital Olarak Hazırlanması Hakkında Yönetmelik — EK-7</title>
-        <version>0.2.0</version>
-        <description>RG 5.8.2026, sayı 33331 EK-7 tablolarının IDS karşılığı; ifc-ruhsat 0.2.0 tarafından üretildi. Kapsam: kodlanmış tablolar (KAYNAKLAR.md). Malzeme adı biçimi, IfcSystem ilişkisi, kaplama seçeneği ve koordinat dönüşümü IDS dışında, araçta denetlenir.</description>
+        <version>0.2.1</version>
+        <description>RG 5.8.2026, sayı 33331 EK-7 tablolarının IDS karşılığı; ifc-ruhsat 0.2.1 tarafından üretildi. Kapsam: kodlanmış tablolar (KAYNAKLAR.md). Malzeme adı biçimi, IfcSystem ilişkisi, kaplama seçeneği ve koordinat dönüşümü IDS dışında, araçta denetlenir.</description>
         <purpose>Yapı ruhsatı teslim öncesi model kontrolü</purpose>
         <milestone>Ruhsat</milestone>
     </info>

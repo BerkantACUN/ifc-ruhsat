@@ -1,6 +1,6 @@
 [project]
 name = "ifc-ruhsat"
-version = "0.2.0"
+version = "0.2.1"
 description = "Yapı ruhsatı IFC modelini Türkiye'nin dijital proje yönetmeliğine (RG 5.8.2026, 33331) göre kontrol eder — CLI ve MCP sunucusu. Checks an IFC model against Türkiye's building-permit BIM regulation."
 readme = "README.md"
 license = "MIT"

@@ -103,6 +103,7 @@ def _yalniz_isim(sinif: str, varliklar: list[Any]) -> list[Bulgu]:
 def _tablo_kontrol(b: Baglam, tablo: dict[str, Any], varliklar: list[Any]) -> list[Bulgu]:
     out: list[Bulgu] = []
     sinif, ref = tablo["ifc"], f"EK-6 Tablo {tablo['tablo']}"
+    out += _eksik_setler(sinif, ref, tablo, varliklar)
     for g in tablo["gerekenler"]:
         tur = g["tur"]
         if tur == "oznitelik":
@@ -196,11 +197,50 @@ def _baska_sette(e: Any, set_adi: str, ad: str) -> str | None:
     return None
 
 
+def _eksik_setler(sinif: str, ref: str, tablo: dict[str, Any], varliklar: list[Any]) -> list[Bulgu]:
+    """Bir özellik seti varlıkta hiç yoksa özellik özellik değil, set olarak tek bulgu: gerçek
+    modellerde en sık durum budur (Pset_BuildingCommon tamamen boş gibi) ve 12 satır yerine 1 satır."""
+    out = []
+    setler: dict[str, list[str]] = {}
+    for g in tablo["gerekenler"]:
+        if g["tur"] == "ozellik":
+            setler.setdefault(g["set"], []).append(g["ad"])
+    for set_adi, adlar in setler.items():
+        # Set yok ama özellikleri başka bir sette duruyorsa o "yanlış set" bulgusudur, burada sayılmaz.
+        yok = [
+            e
+            for e in varliklar
+            if set_adi not in ozellik_setleri(e)
+            and not any(_baska_sette(e, set_adi, ad) for ad in adlar)
+        ]
+        if not yok:
+            continue
+        out.append(
+            Bulgu(
+                "ek6-set",
+                "hata",
+                f"{sinif}: {set_adi} özellik seti {len(yok)} varlıkta hiç yok; zorunlu özellikler: "
+                f"{', '.join(adlar)}.",
+                ref,
+                9,
+                varlik_listesi(yok),
+                len(yok),
+            )
+        )
+    return out
+
+
 def _ozellik_kontrol(sinif: str, ref: str, g: dict, varliklar: list[Any]) -> list[Bulgu]:
     bos, yanlis_set, tip_yanlis, deger_yanlis = [], {}, [], []
     izinli = g.get("degerler")
     for e in varliklar:
         d = ozellik(e, g["set"], g["ad"])
+        if (
+            d is None
+            and g["set"] not in ozellik_setleri(e)
+            and not _baska_sette(e, g["set"], g["ad"])
+        ):
+            continue  # set bütünüyle yok: _eksik_setler tek bulguyla raporladı
         if d is None:
             baska = _baska_sette(e, g["set"], g["ad"])
             if baska:
