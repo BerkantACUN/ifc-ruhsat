@@ -17,38 +17,19 @@ Bu araçtaki her kural yönetmeliğin bir maddesine ya da ekinin bir tablosuna d
 |---|---|---|---|
 | `ek2_disiplinler.json` | Tablo 2.2 — 12 disiplin kodu | ek s.3 | görsel, 2026-09-17 |
 | `ek5_siniflar.json` | Tablo 5.1 — 69 zorunlu sınıf + kategori kodu; Tablo 5.2 — 67 isteğe bağlı; Tablo 5.3 isimlendirme şablonu | ek s.29–34 | görsel, 2026-09-17; sınıf adları IFC4X3_ADD2 şemasına karşı doğrulandı |
-| `ek6_ozellikler.json` | Tablo 6.1–6.68'den **23 tablo** (aşağıda) | tabloda | görsel, 2026-09-17 |
+| `ek6_ozellikler.json` | Tablo 6.1–6.68, **68 tablonun tamamı** (aşağıda) | tabloda | görsel, 2026-09-17; öznitelikler IFC4X3_ADD2 şemasına, özellikler resmî Pset şablonlarına karşı testle doğrulanır |
 | `ek7_proje.json` | Tablo 7.1 IfcProject, 7.2 IfcPerson, 7.3 IfcPersonAndOrganization, 7.4 IfcOrganization, 7.5 IfcActorRole, 7.6 IfcProjectedCRS, 7.7 IfcMapConversion | ek s.222–230 | görsel, 2026-09-17 |
 | `ek9_form.json` | Tablo 9.1 — 21 kontrol satırı (mimari) | ek s.238–239 | görsel, 2026-09-17 |
 
 ### EK-6: kodlanmış tablolar
 
-| Tablo | Sınıf | Sayfa | Tablo | Sınıf | Sayfa |
-|---|---|---|---|---|---|
-| 6.1 | IfcAirTerminal | 36 | 6.41 | IfcOpeningElement | 80 |
-| 6.3 | IfcBeam | 38 | 6.48 | IfcRailing | 87 |
-| 6.7 | IfcBuilding | 42–44 | 6.49 | IfcRamp | 88 |
-| 6.8 | IfcBuildingStorey | 45 | 6.52 | IfcRoof | 91 |
-| 6.16 | IfcColumn | 53–54 | 6.55 | IfcSite | 94–95 |
-| 6.20 | IfcCovering | 58–59 | 6.56 | IfcSlab | 96 |
-| 6.21 | IfcCurtainWall | 60 | 6.58 | IfcSpace | 98–99 |
-| 6.25 | IfcDoor | 64 | 6.60 | IfcSpatialZone | 101 |
-| 6.34 | IfcFooting | 73 | 6.61 | IfcStair | 102 |
-| 6.35 | IfcFurniture | 74 | 6.66 | IfcWall | 107 |
-| 6.40 | IfcMember | 79 | 6.67 | IfcWindow | 108 |
-| | | | 6.68 | IfcZone | 109 |
+68 zorunlu sınıfın tamamı: Tablo 6.1–6.68, ek sayfa 36–109; sıra Tablo 5.1 ile aynıdır (Tablo 6.n ↔ Tablo 5.1 satır n), her tablonun sayfası `ek6_ozellikler.json` içindeki `sayfa` alanındadır. İki turda okundu: 23 mimari tablo (6.1, 6.3, 6.7, 6.8, 6.16, 6.20, 6.21, 6.25, 6.34, 6.35, 6.40, 6.41, 6.48, 6.49, 6.52, 6.55, 6.56, 6.58, 6.60, 6.61, 6.66, 6.67, 6.68) ve kalan 45 tesisat/altyapı tablosu. Tesisat tablolarında Ön Tanımlı Tip listesi tablodan değil IFC4X3_ADD2 şemasından alınmıştır (EK-5 5.4 "IFC 4.3 esas alınarak" — liste aynıdır, yazım hataları hariç).
 
-### EK-6: henüz kodlanmamış zorunlu sınıflar (45)
-
-Modelde bulunduklarında yalnızca `Name` denetlenir ve rapor bunu "ek6-kapsam" bulgusuyla söyler. Sayfa aralığı 37–106; sıra Tablo 5.1 ile aynıdır (Tablo 6.n ↔ Tablo 5.1 satır n).
-
-IfcAudioVisualAppliance, IfcBoiler, IfcBridge, IfcBridgePart, IfcBurner, IfcCableCarrierFitting, IfcCableCarrierSegment, IfcCaissonFoundation, IfcChiller, IfcChimney, IfcCoil, IfcCommunicationsAppliance, IfcCondenser, IfcCoolingTower, IfcDamper, IfcDistributionBoard, IfcDistributionSystem, IfcDuctFitting, IfcDuctSegment, IfcDuctSilencer, IfcElectricAppliance, IfcElectricGenerator, IfcEvaporator, IfcFan, IfcFireSuppressionTerminal, IfcGridAxis, IfcGroup, IfcHeatExchanger, IfcLightFixture, IfcOutlet, IfcPavement, IfcPile, IfcPipeFitting, IfcPipeSegment, IfcPump, IfcRoad, IfcRoadPart, IfcSanitaryTerminal, IfcSign, IfcSolarDevice, IfcSpaceHeater, IfcTank, IfcTransformer, IfcTransportElement, IfcValve.
-
-Katkı: ilgili sayfayı okuyup `ek6_ozellikler.json`'a tabloyu sayfa numarasıyla ekleyin; `tests/` içindeki şema tutarlılık testi sınıf ve enum adlarını denetler.
+Tesisat tablolarının ortak deseni: PredefinedType, Name, Tag, `IfcRelAssignsToGroup>IfcSystem` bağı (sistem cihazlarında) ve sınıfa özel bir-iki Pset özelliği (ör. `Pset_FanTypeCommon.NominalAirFlowRate`, `Pset_ElectricalDeviceCommon.NominalPowerConsumption`). Köprü/yol/kazık gibi altyapı sınıflarında Tag yerine malzeme istenir.
 
 ### Kodlanmamış ekler
 
-- **EK-1** proje kodu yapısı ve **EK-3** mahal numaralama/isimlendirme: v0.1'de yok (EK-9 m.4 "elle").
+- **EK-1** proje kodu yapısı: IfcProject.Name yalnızca boş olmamasıyla denetlenir. **EK-3** mahal numarası şablonu (Tablo 3.1) ve kat kodları (Tablo 2.14) kodlandı; Tablo 3.2'deki mahal ismi kısaltmaları listesi (yaklaşık 150 ad, s.14–19) kodlanmadı — LongName yalnızca boş olmamasıyla denetlenir.
 - **EK-2** Tablo 2.3–2.14 (alt disiplin/öğe, dosya türü, dosya tipi, kat kodları): dosya adı yalnızca alan sayısı/uzunluğu ve disiplin koduyla denetlenir.
 - **EK-4** CAD katman esasları: kapsam dışı (IFC değil).
 - **EK-6** Tablo 6.69–6.135 (isteğe bağlı öznitelikler): idare istemedikçe zorunlu değil, kodlanmadı.
@@ -61,6 +42,8 @@ Katkı: ilgili sayfayı okuyup `ek6_ozellikler.json`'a tabloyu sayfa numarasıyl
 2. **Ön Tanımlı Tip yazımları.** EK-6 tablolarında bazı tipler boşluklu yazılmış (SKIRTING BOARD, FILE CABINET, TECHNICAL CABINET); IFC 4.3 şemasındaki gerçek değerler SKIRTINGBOARD, FILECABINET, TECHNICALCABINET. Araç şemadaki değerleri kullanır.
 3. **Özel özellik seti öneki.** EK-6 6.5 metninde "TREpys_" ile başlayan setler kullanıcı tarafından oluşturulur denir; Tablo 6.55 ve 6.60'ta setler `TREpys_ParselOzellikSeti` ve `TREpys_EmsalOzellikSeti` olarak geçer. Araç bu iki adı birebir kullanır.
 4. **IfcOrganization.Identification** için EK-7 "Sayı" der (vergi no) ama IFC'de bu alan metindir; araç rakamlardan oluşan metni kabul eder.
+5. **IfcGroup için "Attribute: Tag"** (Tablo 6.37): IfcGroup'un IFC şemasında Tag özniteliği yoktur; araç yalnızca Name'i denetler.
+6. **Ön Tanımlı Tip listelerinde yazım**: tablolarda "AIR COOLED", "BACKWARD INCLINED CURVED" gibi boşluklu yazımlar şemada "AIRCOOLED", "CENTRIFUGALBACKWARDINCLINEDCURVED" biçimindedir; araç şemayı esas alır.
 
 ## Doğrulama yöntemi ve sınırı
 

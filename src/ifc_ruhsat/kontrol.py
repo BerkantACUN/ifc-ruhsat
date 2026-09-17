@@ -7,17 +7,15 @@ from pathlib import Path
 import ifcopenshell
 
 from ifc_ruhsat.bulgu import Bulgu, Rapor
-from ifc_ruhsat.kurallar import emsal, isim, ortak, ozellik, sinif, yapi
+from ifc_ruhsat.kurallar import emsal, isim, kot, mahal, ortak, ozellik, sinif, yapi
 
-MODULLER = (yapi, sinif, isim, ozellik, emsal)
+MODULLER = (yapi, sinif, isim, ozellik, emsal, mahal, kot)
 
 # EK-9'un bu sürümde makinece hiç denetlenemeyen satırları: rapor bunları "elle" olarak
 # açıkça bırakır, "uygun" demez.
 ELLE = {
     1: "Bakanlığın dosya boyutu sınırı henüz yayımlanmadı; dosya {boyut}, karar idarenin.",
     7: "Gelişim seviyesi (LOD 300) geometrinin ayrıntısına bakılarak elle değerlendirilir.",
-    13: "Mahallerin örtüşmesi bu sürümde geometrik olarak denetlenmiyor (kat ataması denetleniyor).",
-    14: "Mahallerin kapalı olması ve üst sınırı bu sürümde geometrik olarak denetlenmiyor.",
     21: "PDF paftaların modelden üretildiği yalnızca teslim sürecinden anlaşılır.",
 }
 

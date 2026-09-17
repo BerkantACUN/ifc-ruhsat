@@ -1,6 +1,6 @@
 """ifc-ruhsat — yapı ruhsatı IFC modelini yönetmeliğe göre kontrol eder."""
 
-SURUM = "0.1.0"
+SURUM = "0.2.0"
 
 YONETMELIK = {
     "ad": "Mimarlık ve Mühendislik Projelerinin Dijital Olarak Hazırlanması Hakkında Yönetmelik",

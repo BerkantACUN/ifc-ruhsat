@@ -94,9 +94,12 @@ def malzeme_adi(e: Any) -> str | None:
 
 def kati(e: Any) -> Any | None:
     """Nesnenin içinde bulunduğu IfcBuildingStorey (IfcRelContainedInSpatialStructure), yoksa None."""
-    kap = ue.get_container(e)
+    # Yapı elemanları kata IfcRelContainedInSpatialStructure ile, mahaller IfcRelAggregates ile bağlanır.
+    kap = ue.get_container(e) or ue.get_aggregate(e)
     while kap is not None and not kap.is_a("IfcBuildingStorey"):
-        kap = ue.get_aggregate(kap) if not kap.is_a("IfcProject") else None
+        if kap.is_a("IfcProject"):
+            return None
+        kap = ue.get_container(kap) or ue.get_aggregate(kap)
     return kap
 
 

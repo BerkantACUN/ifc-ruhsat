@@ -74,23 +74,23 @@ Sunucu yalnızca verilen dosyayı okur; ağa hiçbir şey göndermez, hiçbir ş
 |---|---|---|
 | 2 Proje bilgileri | IfcProject, IfcPerson, IfcOrganization, IfcPersonAndOrganization öznitelikleri (EK-7 Tablo 7.1–7.5) | otomatik |
 | 3 Dosya/proje adı | EK-2 Tablo 2.1 dokuz alan; IfcProject.Name | otomatik (alt disiplin/dosya türü kodları listeyle karşılaştırılmıyor) |
-| 4 Mahal no/ismi | EK-3 | **elle** (sonraki sürüm) |
+| 4 Mahal no/ismi | IfcSpace.Name `Kat_Bölüm_SıraNo` (EK-3 Tablo 3.1, kat kodları EK-2 Tablo 2.14), LongName dolu | otomatik |
 | 5 Varlık adları | `Disiplin-Kategori-Açıklama`; disiplin EK-2, kategori kodu EK-5 ve sınıfla uyumu | otomatik |
 | 6 Koordinat | IfcProjectedCRS (EPSG:5253–5259, datum, zon, birim) + IfcMapConversion (EK-7 Tablo 7.6–7.7) | otomatik |
 | 7 LOD 300 | — | **elle** |
 | 8 / 17 Sınıflar | EK-5 zorunlu + isteğe bağlı liste; IfcProxy / IfcBuildingElementProxy yasak; üst sınıf yerine alt sınıf | otomatik + elle (anlam) |
-| 9 / 20 Öznitelik ve özellikler | EK-6 tabloları: Name, Tag, malzeme (Ad_Dayanım), Pset_/Qto_/TREpys_ özellikleri, veri tipi, izinli değerler; yanlış sette bulunan özellik ayrıca | otomatik — **kodlanmış 23 sınıf** (aşağıda) |
+| 9 / 20 Öznitelik ve özellikler | EK-6'nın **68 zorunlu sınıf tablosunun tamamı**: Name, Tag, malzeme (Ad_Dayanım), IfcSystem bağı, katman, Pset_/Qto_/TREpys_ özellikleri, veri tipi, izinli değerler; yanlış sette bulunan özellik ayrıca | otomatik |
 | 10 Emsal | IfcSpatialZone alanları EmsalDurumu'na (DAHIL/HARIC/DIGER) göre toplanır, KAKS × parsel alanıyla karşılaştırılır | kısmen (pafta tablosuyla karşılaştırma elle) |
 | 11 İskelet | Proje, Saha, Bina, ≥1 Kat; tek IfcProject | otomatik |
 | 12 Mahal var mı | mimari disiplinde IfcSpace | otomatik |
-| 13–14 Mahal geometrisi | — | **elle** (sonraki sürüm) |
-| 15 Kata bağlılık | her eleman IfcRelContainedInSpatialStructure ile bir kata bağlı | kısmen (kot elle) |
+| 13–14 Mahal geometrisi | her mahalin hacimli 3B gövdesi var; aynı kattaki mahallerin sınır kutuları %10'dan fazla örtüşmüyor | otomatik (kutu tabanlı, kaba) |
+| 15 Kata bağlılık ve kot | her eleman bir kata bağlı; gövdesi katın kotu ile üst katın kotu arasında (±1,5 m) | otomatik |
 | 16 Yinelenen | tekrar eden GlobalId; aynı sınıf+ad+yerleşim | otomatik |
 | 18 IFC sürümü | IFC4X3, `.ifc` uzantısı | otomatik |
 | 19 Ön Tanımlı Tip | boş / NOTDEFINED; USERDEFINED ise ObjectType | otomatik |
 | 1, 21 | dosya boyutu sınırı yayımlanmadı; PDF–IFC uyumu | **elle** |
 
-EK-6'nın 68 zorunlu sınıf tablosundan bu sürümde **23'ü** nihai Resmî Gazete metninden doğrulanıp kodlandı: IfcAirTerminal, IfcBeam, IfcBuilding, IfcBuildingStorey, IfcColumn, IfcCovering, IfcCurtainWall, IfcDoor, IfcFooting, IfcFurniture, IfcMember, IfcOpeningElement, IfcRailing, IfcRamp, IfcRoof, IfcSite, IfcSlab, IfcSpace, IfcSpatialZone, IfcStair, IfcWall, IfcWindow, IfcZone — mimari disiplinin gövdesi. Kalan 45 (çoğu mekanik/elektrik) için yalnızca `Name` denetlenir ve rapor bunu söyler. Hangi tablonun hangi sayfadan doğrulandığı: [KAYNAKLAR.md](KAYNAKLAR.md).
+EK-6'nın 68 zorunlu sınıf tablosunun tamamı nihai Resmî Gazete ekinden sayfa sayfa okunup kodlandı; her öznitelik IFC 4.3 şemasına, her özellik buildingSMART'ın resmî Pset şablonlarına karşı testle doğrulanır. Hangi tablonun hangi sayfadan geldiği: [KAYNAKLAR.md](KAYNAKLAR.md). Geometri kontrolleri (mahal gövdesi, örtüşme, kot) sınır kutusu tabanlıdır — hızlı ve kaba; L biçimli mahallerde yanlış alarm verebilir, bunu bulgu metni de söyler.
 
 ## Yönetmelik ne diyor, kısaca
 

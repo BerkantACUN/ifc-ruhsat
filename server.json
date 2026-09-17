@@ -6,12 +6,12 @@
     "url": "https://github.com/BerkantACUN/ifc-ruhsat",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "ifc-ruhsat",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"

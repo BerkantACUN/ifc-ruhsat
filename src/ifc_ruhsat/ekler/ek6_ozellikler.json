@@ -1,5 +1,5 @@
 {
-  "kaynak": "RG 5.8.2026 sayı 33331, ek EK-6 Tablo 6.1–6.68 (zorunlu sınıflar); listelenen tablolar nihai metnin sayfalarından görsel olarak doğrulandı (2026-09-17). Doğrulanmamış zorunlu sınıflar için yalnızca Name aranır (KAYNAKLAR.md).",
+  "kaynak": "RG 5.8.2026 sayı 33331, ek EK-6 Tablo 6.1–6.68 (68 zorunlu sınıfın tamamı), nihai metnin sayfalarından görsel olarak doğrulandı (2026-09-17); Ön Tanımlı Tip listeleri IFC4X3_ADD2 şemasından; özellik adları IFC4X3 Pset şablonlarıyla çapraz kontrol edildi.",
   "veriTipleri": {
     "M": "Metin",
     "S": "Sayı",
@@ -1271,6 +1271,1902 @@
           "ad": "ObjectType",
           "veriTipi": "M",
           "turkce": "Nesne Tipi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcAudioVisualAppliance",
+      "tablo": "6.2",
+      "sayfa": 37,
+      "onTanimliTipler": [
+        "AMPLIFIER",
+        "CAMERA",
+        "COMMUNICATIONTERMINAL",
+        "DISPLAY",
+        "MICROPHONE",
+        "NOTDEFINED",
+        "PLAYER",
+        "PROJECTOR",
+        "RECEIVER",
+        "RECORDINGEQUIPMENT",
+        "SPEAKER",
+        "SWITCHER",
+        "TELEPHONE",
+        "TUNER",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcBoiler",
+      "tablo": "6.4",
+      "sayfa": 39,
+      "onTanimliTipler": [
+        "NOTDEFINED",
+        "STEAM",
+        "USERDEFINED",
+        "WATER"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BoilerTypeCommon",
+          "ad": "NominalEnergyConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Enerji Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcBridge",
+      "tablo": "6.5",
+      "sayfa": 40,
+      "onTanimliTipler": [
+        "ARCHED",
+        "CABLE_STAYED",
+        "CANTILEVER",
+        "CULVERT",
+        "FRAMEWORK",
+        "GIRDER",
+        "NOTDEFINED",
+        "SUSPENSION",
+        "TRUSS",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcBridgePart",
+      "tablo": "6.6",
+      "sayfa": 41,
+      "onTanimliTipler": [
+        "ABUTMENT",
+        "DECK",
+        "DECK_SEGMENT",
+        "FOUNDATION",
+        "NOTDEFINED",
+        "PIER",
+        "PIER_SEGMENT",
+        "PYLON",
+        "SUBSTRUCTURE",
+        "SUPERSTRUCTURE",
+        "SURFACESTRUCTURE",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcBurner",
+      "tablo": "6.9",
+      "sayfa": 46,
+      "onTanimliTipler": [
+        "NOTDEFINED",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ElectricalDeviceCommon",
+          "ad": "NominalPowerConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Güç Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCableCarrierFitting",
+      "tablo": "6.10",
+      "sayfa": 47,
+      "onTanimliTipler": [
+        "BEND",
+        "CONNECTOR",
+        "CROSS",
+        "JUNCTION",
+        "NOTDEFINED",
+        "REDUCER",
+        "TEE",
+        "TRANSITION",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCableCarrierSegment",
+      "tablo": "6.11",
+      "sayfa": 48,
+      "onTanimliTipler": [
+        "CABLEBRACKET",
+        "CABLELADDERSEGMENT",
+        "CABLETRAYSEGMENT",
+        "CABLETRUNKINGSEGMENT",
+        "CATENARYWIRE",
+        "CONDUITSEGMENT",
+        "DROPPER",
+        "NOTDEFINED",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCaissonFoundation",
+      "tablo": "6.12",
+      "sayfa": 49,
+      "onTanimliTipler": [
+        "CAISSON",
+        "NOTDEFINED",
+        "USERDEFINED",
+        "WELL"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcChiller",
+      "tablo": "6.13",
+      "sayfa": 50,
+      "onTanimliTipler": [
+        "AIRCOOLED",
+        "HEATRECOVERY",
+        "NOTDEFINED",
+        "USERDEFINED",
+        "WATERCOOLED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ChillerTypeCommon",
+          "ad": "ChillerCapacity",
+          "veriTipi": "S",
+          "turkce": "Soğutucu Kapasitesi"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ElectricalDeviceCommon",
+          "ad": "NominalPowerConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Güç Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcChimney",
+      "tablo": "6.14",
+      "sayfa": 51,
+      "onTanimliTipler": [
+        "NOTDEFINED",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCoil",
+      "tablo": "6.15",
+      "sayfa": 52,
+      "onTanimliTipler": [
+        "DXCOOLINGCOIL",
+        "ELECTRICHEATINGCOIL",
+        "GASHEATINGCOIL",
+        "HYDRONICCOIL",
+        "NOTDEFINED",
+        "STEAMHEATINGCOIL",
+        "USERDEFINED",
+        "WATERCOOLINGCOIL",
+        "WATERHEATINGCOIL"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_CoilTypeCommon",
+          "ad": "NominalLatentCapacity",
+          "veriTipi": "S",
+          "turkce": "Nominal Gizli Kapasite"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_CoilTypeCommon",
+          "ad": "NominalSensibleCapacity",
+          "veriTipi": "S",
+          "turkce": "Nominal Hissedilir Kapasite"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCommunicationsAppliance",
+      "tablo": "6.17",
+      "sayfa": 55,
+      "onTanimliTipler": [
+        "ANTENNA",
+        "AUTOMATON",
+        "COMPUTER",
+        "FAX",
+        "GATEWAY",
+        "INTELLIGENTPERIPHERAL",
+        "IPNETWORKEQUIPMENT",
+        "LINESIDEELECTRONICUNIT",
+        "MODEM",
+        "NETWORKAPPLIANCE",
+        "NETWORKBRIDGE",
+        "NETWORKHUB",
+        "NOTDEFINED",
+        "OPTICALLINETERMINAL",
+        "OPTICALNETWORKUNIT",
+        "PRINTER",
+        "RADIOBLOCKCENTER",
+        "REPEATER",
+        "ROUTER",
+        "SCANNER",
+        "TELECOMMAND",
+        "TELEPHONYEXCHANGE",
+        "TRANSITIONCOMPONENT",
+        "TRANSPONDER",
+        "TRANSPORTEQUIPMENT",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCondenser",
+      "tablo": "6.18",
+      "sayfa": 56,
+      "onTanimliTipler": [
+        "AIRCOOLED",
+        "EVAPORATIVECOOLED",
+        "NOTDEFINED",
+        "USERDEFINED",
+        "WATERCOOLED",
+        "WATERCOOLEDBRAZEDPLATE",
+        "WATERCOOLEDSHELLCOIL",
+        "WATERCOOLEDSHELLTUBE",
+        "WATERCOOLEDTUBEINTUBE"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ElectricalDeviceCommon",
+          "ad": "NominalPowerConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Güç Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCoolingTower",
+      "tablo": "6.19",
+      "sayfa": 57,
+      "onTanimliTipler": [
+        "MECHANICALFORCEDDRAFT",
+        "MECHANICALINDUCEDDRAFT",
+        "NATURALDRAFT",
+        "NOTDEFINED",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_CoolingTowerTypeCommon",
+          "ad": "NominalCapacity",
+          "veriTipi": "S",
+          "turkce": "Nominal Kapasite"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcDamper",
+      "tablo": "6.22",
+      "sayfa": 61,
+      "onTanimliTipler": [
+        "BACKDRAFTDAMPER",
+        "BALANCINGDAMPER",
+        "BLASTDAMPER",
+        "CONTROLDAMPER",
+        "FIREDAMPER",
+        "FIRESMOKEDAMPER",
+        "FUMEHOODEXHAUST",
+        "GRAVITYDAMPER",
+        "GRAVITYRELIEFDAMPER",
+        "NOTDEFINED",
+        "RELIEFDAMPER",
+        "SMOKEDAMPER",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcDistributionBoard",
+      "tablo": "6.23",
+      "sayfa": 62,
+      "onTanimliTipler": [
+        "CONSUMERUNIT",
+        "DISPATCHINGBOARD",
+        "DISTRIBUTIONBOARD",
+        "DISTRIBUTIONFRAME",
+        "MOTORCONTROLCENTRE",
+        "NOTDEFINED",
+        "SWITCHBOARD",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ElectricalDeviceCommon",
+          "ad": "NominalPowerConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Güç Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcDistributionSystem",
+      "tablo": "6.24",
+      "sayfa": 63,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "LongName",
+          "veriTipi": "M",
+          "turkce": "Uzun İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcDuctFitting",
+      "tablo": "6.26",
+      "sayfa": 65,
+      "onTanimliTipler": [
+        "BEND",
+        "CONNECTOR",
+        "ENTRY",
+        "EXIT",
+        "JUNCTION",
+        "NOTDEFINED",
+        "OBSTRUCTION",
+        "TRANSITION",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcDuctSegment",
+      "tablo": "6.27",
+      "sayfa": 66,
+      "onTanimliTipler": [
+        "FLEXIBLESEGMENT",
+        "NOTDEFINED",
+        "RIGIDSEGMENT",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcDuctSilencer",
+      "tablo": "6.28",
+      "sayfa": 67,
+      "onTanimliTipler": [
+        "FLATOVAL",
+        "NOTDEFINED",
+        "RECTANGULAR",
+        "ROUND",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcElectricAppliance",
+      "tablo": "6.29",
+      "sayfa": 68,
+      "onTanimliTipler": [
+        "DISHWASHER",
+        "ELECTRICCOOKER",
+        "FREESTANDINGELECTRICHEATER",
+        "FREESTANDINGFAN",
+        "FREESTANDINGWATERCOOLER",
+        "FREESTANDINGWATERHEATER",
+        "FREEZER",
+        "FRIDGE_FREEZER",
+        "HANDDRYER",
+        "KITCHENMACHINE",
+        "MICROWAVE",
+        "NOTDEFINED",
+        "PHOTOCOPIER",
+        "REFRIGERATOR",
+        "TUMBLEDRYER",
+        "USERDEFINED",
+        "VENDINGMACHINE",
+        "WASHINGMACHINE"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcElectricGenerator",
+      "tablo": "6.30",
+      "sayfa": 69,
+      "onTanimliTipler": [
+        "CHP",
+        "ENGINEGENERATOR",
+        "NOTDEFINED",
+        "STANDALONE",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcEvaporator",
+      "tablo": "6.31",
+      "sayfa": 70,
+      "onTanimliTipler": [
+        "DIRECTEXPANSION",
+        "DIRECTEXPANSIONBRAZEDPLATE",
+        "DIRECTEXPANSIONSHELLANDTUBE",
+        "DIRECTEXPANSIONTUBEINTUBE",
+        "FLOODEDSHELLANDTUBE",
+        "NOTDEFINED",
+        "SHELLANDCOIL",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ElectricalDeviceCommon",
+          "ad": "NominalPowerConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Güç Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcFan",
+      "tablo": "6.32",
+      "sayfa": 71,
+      "onTanimliTipler": [
+        "CENTRIFUGALAIRFOIL",
+        "CENTRIFUGALBACKWARDINCLINEDCURVED",
+        "CENTRIFUGALFORWARDCURVED",
+        "CENTRIFUGALRADIAL",
+        "NOTDEFINED",
+        "PROPELLORAXIAL",
+        "TUBEAXIAL",
+        "USERDEFINED",
+        "VANEAXIAL"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_FanTypeCommon",
+          "ad": "NominalTotalPressure",
+          "veriTipi": "S",
+          "turkce": "Nominal Toplam Basınç"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_FanTypeCommon",
+          "ad": "NominalAirFlowRate",
+          "veriTipi": "S",
+          "turkce": "Nominal Hava Debisi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcFireSuppressionTerminal",
+      "tablo": "6.33",
+      "sayfa": 72,
+      "onTanimliTipler": [
+        "BREECHINGINLET",
+        "FIREHYDRANT",
+        "FIREMONITOR",
+        "HOSEREEL",
+        "NOTDEFINED",
+        "SPRINKLER",
+        "SPRINKLERDEFLECTOR",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcGridAxis",
+      "tablo": "6.36",
+      "sayfa": 75,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "AxisTag",
+          "veriTipi": "SM",
+          "turkce": "Aks Etiketi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcGroup",
+      "tablo": "6.37",
+      "sayfa": 76,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        }
+      ],
+      "not": "Tabloda Tag da yazar; IfcGroup'un IFC şemasında Tag özniteliği yoktur, denetlenmez (KAYNAKLAR.md)."
+    },
+    {
+      "ifc": "IfcHeatExchanger",
+      "tablo": "6.38",
+      "sayfa": 77,
+      "onTanimliTipler": [
+        "NOTDEFINED",
+        "PLATE",
+        "SHELLANDTUBE",
+        "TURNOUTHEATING",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcLightFixture",
+      "tablo": "6.39",
+      "sayfa": 78,
+      "onTanimliTipler": [
+        "DIRECTIONSOURCE",
+        "NOTDEFINED",
+        "POINTSOURCE",
+        "SECURITYLIGHTING",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ElectricalDeviceCommon",
+          "ad": "NominalPowerConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Güç Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcOutlet",
+      "tablo": "6.42",
+      "sayfa": 81,
+      "onTanimliTipler": [
+        "AUDIOVISUALOUTLET",
+        "COMMUNICATIONSOUTLET",
+        "DATAOUTLET",
+        "NOTDEFINED",
+        "POWEROUTLET",
+        "TELEPHONEOUTLET",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcPavement",
+      "tablo": "6.43",
+      "sayfa": 82,
+      "onTanimliTipler": [
+        "FLEXIBLE",
+        "NOTDEFINED",
+        "RIGID",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "katman",
+          "ad": "IfcMaterialLayer.Material",
+          "veriTipi": "M",
+          "turkce": "Kaplama Malzemesi"
+        },
+        {
+          "tur": "katman",
+          "ad": "IfcMaterialLayer.LayerThickness",
+          "veriTipi": "M",
+          "turkce": "Kaplama Kalınlığı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcPile",
+      "tablo": "6.44",
+      "sayfa": 83,
+      "onTanimliTipler": [
+        "BORED",
+        "COHESION",
+        "DRIVEN",
+        "FRICTION",
+        "JETGROUTING",
+        "NOTDEFINED",
+        "SUPPORT",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcPipeFitting",
+      "tablo": "6.45",
+      "sayfa": 84,
+      "onTanimliTipler": [
+        "BEND",
+        "CONNECTOR",
+        "ENTRY",
+        "EXIT",
+        "JUNCTION",
+        "NOTDEFINED",
+        "OBSTRUCTION",
+        "TRANSITION",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcPipeSegment",
+      "tablo": "6.46",
+      "sayfa": 85,
+      "onTanimliTipler": [
+        "CULVERT",
+        "FLEXIBLESEGMENT",
+        "GUTTER",
+        "NOTDEFINED",
+        "RIGIDSEGMENT",
+        "SPOOL",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_PipeSegmentTypeCommon",
+          "ad": "NominalDiameter",
+          "veriTipi": "S",
+          "turkce": "Nominal Çap"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcPump",
+      "tablo": "6.47",
+      "sayfa": 86,
+      "onTanimliTipler": [
+        "CIRCULATOR",
+        "ENDSUCTION",
+        "NOTDEFINED",
+        "SPLITCASE",
+        "SUBMERSIBLEPUMP",
+        "SUMPPUMP",
+        "USERDEFINED",
+        "VERTICALINLINE",
+        "VERTICALTURBINE"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_PumpTypeCommon",
+          "ad": "FlowRateRange",
+          "veriTipi": "S",
+          "turkce": "Akış Debisi Aralığı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ElectricalDeviceCommon",
+          "ad": "NominalPowerConsumption",
+          "veriTipi": "S",
+          "turkce": "Nominal Güç Tüketimi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcRoad",
+      "tablo": "6.50",
+      "sayfa": 89,
+      "onTanimliTipler": [
+        "NOTDEFINED",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcRoadPart",
+      "tablo": "6.51",
+      "sayfa": 90,
+      "onTanimliTipler": [
+        "BICYCLECROSSING",
+        "BUS_STOP",
+        "CARRIAGEWAY",
+        "CENTRALISLAND",
+        "CENTRALRESERVE",
+        "HARDSHOULDER",
+        "INTERSECTION",
+        "LAYBY",
+        "NOTDEFINED",
+        "PARKINGBAY",
+        "PASSINGBAY",
+        "PEDESTRIAN_CROSSING",
+        "RAILWAYCROSSING",
+        "REFUGEISLAND",
+        "ROADSEGMENT",
+        "ROADSIDE",
+        "ROADSIDEPART",
+        "ROADWAYPLATEAU",
+        "ROUNDABOUT",
+        "SHOULDER",
+        "SIDEWALK",
+        "SOFTSHOULDER",
+        "TOLLPLAZA",
+        "TRAFFICISLAND",
+        "TRAFFICLANE",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcSanitaryTerminal",
+      "tablo": "6.53",
+      "sayfa": 92,
+      "onTanimliTipler": [
+        "BATH",
+        "BIDET",
+        "CISTERN",
+        "NOTDEFINED",
+        "SANITARYFOUNTAIN",
+        "SHOWER",
+        "SINK",
+        "TOILETPAN",
+        "URINAL",
+        "USERDEFINED",
+        "WASHHANDBASIN",
+        "WCSEAT"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcSign",
+      "tablo": "6.54",
+      "sayfa": 93,
+      "onTanimliTipler": [
+        "MARKER",
+        "MIRROR",
+        "NOTDEFINED",
+        "PICTORAL",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcSolarDevice",
+      "tablo": "6.57",
+      "sayfa": 97,
+      "onTanimliTipler": [
+        "NOTDEFINED",
+        "SOLARCOLLECTOR",
+        "SOLARPANEL",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcSpaceHeater",
+      "tablo": "6.59",
+      "sayfa": 100,
+      "onTanimliTipler": [
+        "CONVECTOR",
+        "NOTDEFINED",
+        "RADIATOR",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SpaceHeaterTypeCommon",
+          "ad": "OutputCapacity",
+          "veriTipi": "S",
+          "turkce": "Çıkış Kapasitesi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcTank",
+      "tablo": "6.62",
+      "sayfa": 103,
+      "onTanimliTipler": [
+        "BASIN",
+        "BREAKPRESSURE",
+        "EXPANSION",
+        "FEEDANDEXPANSION",
+        "NOTDEFINED",
+        "OILRETENTIONTRAY",
+        "PRESSUREVESSEL",
+        "STORAGE",
+        "USERDEFINED",
+        "VESSEL"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_TankTypeCommon",
+          "ad": "TankNominalCapacity",
+          "veriTipi": "S",
+          "turkce": "Tank Nominal Kapasitesi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcTransformer",
+      "tablo": "6.63",
+      "sayfa": 104,
+      "onTanimliTipler": [
+        "CHOPPER",
+        "COMBINED",
+        "CURRENT",
+        "FREQUENCY",
+        "INVERTER",
+        "NOTDEFINED",
+        "RECTIFIER",
+        "USERDEFINED",
+        "VOLTAGE"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_TransformerTypeCommon",
+          "ad": "MaximumApparentPower",
+          "veriTipi": "S",
+          "turkce": "Maksimum Görünen Güç"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcTransportElement",
+      "tablo": "6.64",
+      "sayfa": 105,
+      "onTanimliTipler": [
+        "CRANEWAY",
+        "ELEVATOR",
+        "ESCALATOR",
+        "HAULINGGEAR",
+        "LIFTINGGEAR",
+        "MOVINGWALKWAY",
+        "NOTDEFINED",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_TransportElementCommon",
+          "ad": "CapacityPeople",
+          "veriTipi": "S",
+          "turkce": "İnsan Kapasitesi"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_TransportElementCommon",
+          "ad": "CapacityWeight",
+          "veriTipi": "S",
+          "turkce": "Ağırlık Kapasitesi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcValve",
+      "tablo": "6.65",
+      "sayfa": 106,
+      "onTanimliTipler": [
+        "AIRRELEASE",
+        "ANTIVACUUM",
+        "CHANGEOVER",
+        "CHECK",
+        "COMMISSIONING",
+        "DIVERTING",
+        "DOUBLECHECK",
+        "DOUBLEREGULATING",
+        "DRAWOFFCOCK",
+        "FAUCET",
+        "FLUSHING",
+        "GASCOCK",
+        "GASTAP",
+        "ISOLATING",
+        "MIXING",
+        "NOTDEFINED",
+        "PRESSUREREDUCING",
+        "PRESSURERELIEF",
+        "REGULATING",
+        "SAFETYCUTOFF",
+        "STEAMTRAP",
+        "STOPCOCK",
+        "USERDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ValveTypeCommon",
+          "ad": "Size",
+          "veriTipi": "S",
+          "turkce": "Boyut"
         }
       ]
     }

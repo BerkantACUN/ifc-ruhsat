@@ -144,23 +144,13 @@ def _kat_bagi(b: Baglam) -> list[Bulgu]:
                 len(bagsiz),
             )
         ]
-    return [
-        Bulgu("kat-bagi", "bilgi", "Her yapı elemanı bir kata bağlı.", "EK-9 madde 15", 15),
-        Bulgu(
-            "kat-kotu",
-            "elle",
-            "Elemanların doğru kotta olup olmadığı (kat yüksekliğiyle uyum) bu sürümde "
-            "geometrik olarak denetlenmiyor; yazılımda kat görünümlerinden kontrol edin.",
-            "EK-9 madde 15",
-            15,
-        ),
-    ]
+    return [Bulgu("kat-bagi", "bilgi", "Her yapı elemanı bir kata bağlı.", "EK-9 madde 15", 15)]
 
 
 def _yinelenen(b: Baglam) -> list[Bulgu]:
     """Aynı GlobalId iki kez; ya da aynı sınıf + isim + yerleşim (aynı yere iki kez konmuş eleman)."""
     out = []
-    guid_sayisi = Counter(e.GlobalId for e in b.varliklar)
+    guid_sayisi = Counter(g for e in b.varliklar if (g := getattr(e, "GlobalId", None)))
     tekrar = [g for g, n in guid_sayisi.items() if n > 1]
     if tekrar:
         out.append(

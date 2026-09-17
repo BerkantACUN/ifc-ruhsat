@@ -1067,5 +1067,1314 @@
                 </attribute>
             </requirements>
         </specification>
+        <specification name="EK-6 Tablo 6.2 — IfcAudioVisualAppliance" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.2" description="RG 5.8.2026, sayı 33331 ek s.37">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCAUDIOVISUALAPPLIANCE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.4 — IfcBoiler" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.4" description="RG 5.8.2026, sayı 33331 ek s.39">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBOILER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Enerji Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_BoilerTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalEnergyConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.5 — IfcBridge" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.5" description="RG 5.8.2026, sayı 33331 ek s.40">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBRIDGE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.6 — IfcBridgePart" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.6" description="RG 5.8.2026, sayı 33331 ek s.41">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBRIDGEPART</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.9 — IfcBurner" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.9" description="RG 5.8.2026, sayı 33331 ek s.46">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBURNER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Güç Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_ElectricalDeviceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalPowerConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.10 — IfcCableCarrierFitting" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.10" description="RG 5.8.2026, sayı 33331 ek s.47">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCABLECARRIERFITTING</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.11 — IfcCableCarrierSegment" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.11" description="RG 5.8.2026, sayı 33331 ek s.48">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCABLECARRIERSEGMENT</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.12 — IfcCaissonFoundation" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.12" description="RG 5.8.2026, sayı 33331 ek s.49">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCAISSONFOUNDATION</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.13 — IfcChiller" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.13" description="RG 5.8.2026, sayı 33331 ek s.50">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCHILLER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Soğutucu Kapasitesi">
+                    <propertySet>
+                        <simpleValue>Pset_ChillerTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>ChillerCapacity</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Güç Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_ElectricalDeviceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalPowerConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.14 — IfcChimney" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.14" description="RG 5.8.2026, sayı 33331 ek s.51">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCHIMNEY</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.15 — IfcCoil" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.15" description="RG 5.8.2026, sayı 33331 ek s.52">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOIL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Gizli Kapasite">
+                    <propertySet>
+                        <simpleValue>Pset_CoilTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalLatentCapacity</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Hissedilir Kapasite">
+                    <propertySet>
+                        <simpleValue>Pset_CoilTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalSensibleCapacity</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.17 — IfcCommunicationsAppliance" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.17" description="RG 5.8.2026, sayı 33331 ek s.55">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOMMUNICATIONSAPPLIANCE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.18 — IfcCondenser" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.18" description="RG 5.8.2026, sayı 33331 ek s.56">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCONDENSER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Güç Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_ElectricalDeviceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalPowerConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.19 — IfcCoolingTower" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.19" description="RG 5.8.2026, sayı 33331 ek s.57">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOOLINGTOWER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Kapasite">
+                    <propertySet>
+                        <simpleValue>Pset_CoolingTowerTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalCapacity</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.22 — IfcDamper" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.22" description="RG 5.8.2026, sayı 33331 ek s.61">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDAMPER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.23 — IfcDistributionBoard" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.23" description="RG 5.8.2026, sayı 33331 ek s.62">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDISTRIBUTIONBOARD</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Güç Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_ElectricalDeviceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalPowerConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.24 — IfcDistributionSystem" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.24" description="RG 5.8.2026, sayı 33331 ek s.63">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDISTRIBUTIONSYSTEM</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Uzun İsim">
+                    <name>
+                        <simpleValue>LongName</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.26 — IfcDuctFitting" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.26" description="RG 5.8.2026, sayı 33331 ek s.65">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDUCTFITTING</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.27 — IfcDuctSegment" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.27" description="RG 5.8.2026, sayı 33331 ek s.66">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDUCTSEGMENT</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.28 — IfcDuctSilencer" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.28" description="RG 5.8.2026, sayı 33331 ek s.67">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDUCTSILENCER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.29 — IfcElectricAppliance" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.29" description="RG 5.8.2026, sayı 33331 ek s.68">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCELECTRICAPPLIANCE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.30 — IfcElectricGenerator" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.30" description="RG 5.8.2026, sayı 33331 ek s.69">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCELECTRICGENERATOR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.31 — IfcEvaporator" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.31" description="RG 5.8.2026, sayı 33331 ek s.70">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCEVAPORATOR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Güç Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_ElectricalDeviceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalPowerConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.32 — IfcFan" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.32" description="RG 5.8.2026, sayı 33331 ek s.71">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCFAN</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Toplam Basınç">
+                    <propertySet>
+                        <simpleValue>Pset_FanTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalTotalPressure</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Hava Debisi">
+                    <propertySet>
+                        <simpleValue>Pset_FanTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalAirFlowRate</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.33 — IfcFireSuppressionTerminal" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.33" description="RG 5.8.2026, sayı 33331 ek s.72">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCFIRESUPPRESSIONTERMINAL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.36 — IfcGridAxis" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.36" description="RG 5.8.2026, sayı 33331 ek s.75">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCGRIDAXIS</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Aks Etiketi">
+                    <name>
+                        <simpleValue>AxisTag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.37 — IfcGroup" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.37" description="RG 5.8.2026, sayı 33331 ek s.76">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCGROUP</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.38 — IfcHeatExchanger" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.38" description="RG 5.8.2026, sayı 33331 ek s.77">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCHEATEXCHANGER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.39 — IfcLightFixture" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.39" description="RG 5.8.2026, sayı 33331 ek s.78">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCLIGHTFIXTURE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Güç Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_ElectricalDeviceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalPowerConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.42 — IfcOutlet" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.42" description="RG 5.8.2026, sayı 33331 ek s.81">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCOUTLET</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.43 — IfcPavement" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.43" description="RG 5.8.2026, sayı 33331 ek s.82">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPAVEMENT</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.44 — IfcPile" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.44" description="RG 5.8.2026, sayı 33331 ek s.83">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPILE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.45 — IfcPipeFitting" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.45" description="RG 5.8.2026, sayı 33331 ek s.84">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPIPEFITTING</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.46 — IfcPipeSegment" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.46" description="RG 5.8.2026, sayı 33331 ek s.85">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPIPESEGMENT</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Çap">
+                    <propertySet>
+                        <simpleValue>Pset_PipeSegmentTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalDiameter</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.47 — IfcPump" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.47" description="RG 5.8.2026, sayı 33331 ek s.86">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPUMP</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Akış Debisi Aralığı">
+                    <propertySet>
+                        <simpleValue>Pset_PumpTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FlowRateRange</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Nominal Güç Tüketimi">
+                    <propertySet>
+                        <simpleValue>Pset_ElectricalDeviceCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NominalPowerConsumption</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.50 — IfcRoad" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.50" description="RG 5.8.2026, sayı 33331 ek s.89">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCROAD</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.51 — IfcRoadPart" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.51" description="RG 5.8.2026, sayı 33331 ek s.90">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCROADPART</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.53 — IfcSanitaryTerminal" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.53" description="RG 5.8.2026, sayı 33331 ek s.92">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSANITARYTERMINAL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.54 — IfcSign" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.54" description="RG 5.8.2026, sayı 33331 ek s.93">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSIGN</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.57 — IfcSolarDevice" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.57" description="RG 5.8.2026, sayı 33331 ek s.97">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSOLARDEVICE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.59 — IfcSpaceHeater" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.59" description="RG 5.8.2026, sayı 33331 ek s.100">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACEHEATER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Çıkış Kapasitesi">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceHeaterTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>OutputCapacity</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.62 — IfcTank" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.62" description="RG 5.8.2026, sayı 33331 ek s.103">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCTANK</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Tank Nominal Kapasitesi">
+                    <propertySet>
+                        <simpleValue>Pset_TankTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>TankNominalCapacity</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.63 — IfcTransformer" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.63" description="RG 5.8.2026, sayı 33331 ek s.104">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCTRANSFORMER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Maksimum Görünen Güç">
+                    <propertySet>
+                        <simpleValue>Pset_TransformerTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>MaximumApparentPower</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.64 — IfcTransportElement" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.64" description="RG 5.8.2026, sayı 33331 ek s.105">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCTRANSPORTELEMENT</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="İnsan Kapasitesi">
+                    <propertySet>
+                        <simpleValue>Pset_TransportElementCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>CapacityPeople</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Ağırlık Kapasitesi">
+                    <propertySet>
+                        <simpleValue>Pset_TransportElementCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>CapacityWeight</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.65 — IfcValve" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.65" description="RG 5.8.2026, sayı 33331 ek s.106">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCVALVE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Boyut">
+                    <propertySet>
+                        <simpleValue>Pset_ValveTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Size</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
     </specifications>
 </ids>

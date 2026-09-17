@@ -119,6 +119,8 @@ def _tablo_kontrol(b: Baglam, tablo: dict[str, Any], varliklar: list[Any]) -> li
             pass  # IfcCovering katmanları: _kaplama_kontrol tek seferde bakar
     if sinif == "IfcCovering":
         out += _kaplama_kontrol(b, ref, varliklar)
+    elif any(g["tur"] == "katman" for g in tablo["gerekenler"]):
+        out += _katman_kontrol(sinif, ref, varliklar)
     if sinif == "IfcSpace":
         out = _mahal_kaplama_gevset(b, out)
     return out
@@ -127,6 +129,8 @@ def _tablo_kontrol(b: Baglam, tablo: dict[str, Any], varliklar: list[Any]) -> li
 def _oznitelik_kontrol(sinif: str, ref: str, g: dict, varliklar: list[Any]) -> list[Bulgu]:
     bos, tip_yanlis, deger_yanlis = [], [], []
     izinli = g.get("degerler")
+    if varliklar and not _semada_var(varliklar[0], g["ad"]):
+        return []  # tablo şemada olmayan bir öznitelik sayıyor (IfcGroup.Tag gibi) — KAYNAKLAR.md
     for e in varliklar:
         d = oznitelik(e, g["ad"])
         if d is None:
@@ -174,6 +178,14 @@ def _oznitelik_kontrol(sinif: str, ref: str, g: dict, varliklar: list[Any]) -> l
             )
         )
     return out
+
+
+def _semada_var(e: Any, ad: str) -> bool:
+    try:
+        getattr(e, ad)
+    except AttributeError:
+        return False
+    return True
 
 
 def _baska_sette(e: Any, set_adi: str, ad: str) -> str | None:
@@ -352,6 +364,25 @@ def _kaplama_kontrol(b: Baglam, ref: str, kaplamalar: list[Any]) -> list[Bulgu]:
             "uyari",
             f"IfcCovering: {len(katmansiz)} kaplamada malzeme katmanı/kalınlığı yok ve mahallerde de "
             "Pset_SpaceCoveringRequirements tanımlı değil; iki yöntemden biri zorunlu.",
+            ref,
+            9,
+            varlik_listesi(katmansiz),
+            len(katmansiz),
+        )
+    ]
+
+
+def _katman_kontrol(sinif: str, ref: str, varliklar: list[Any]) -> list[Bulgu]:
+    """Katman malzemesi ve kalınlığı isteyen tablolar (IfcPavement): katmanlı malzeme seti zorunlu."""
+    katmansiz = [e for e in varliklar if not _katmanli(e)]
+    if not katmansiz:
+        return []
+    return [
+        Bulgu(
+            "ek6-katman",
+            "hata",
+            f"{sinif}: {len(katmansiz)} varlıkta katman malzemesi/kalınlığı yok "
+            "(IfcMaterialLayerSet, her katmanda Material ve LayerThickness).",
             ref,
             9,
             varlik_listesi(katmansiz),

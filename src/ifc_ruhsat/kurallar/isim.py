@@ -37,16 +37,6 @@ def kontrol(b: Baglam) -> list[Bulgu]:
     out += _varlik_adlari(b)
     out += _dosya_adi(b)
     out += _proje_adi(b)
-    out.append(
-        Bulgu(
-            "mahal-adi",
-            "elle",
-            "Mahal numarası ve mahal ismi (EK-3: kat, bölüm/fonksiyon, sıra no) bu sürümde "
-            "denetlenmiyor; mahal listesinden kontrol edin.",
-            "m.10, EK-3",
-            4,
-        )
-    )
     return out
 
 

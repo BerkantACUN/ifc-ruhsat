@@ -19,6 +19,7 @@ import ifcopenshell.api.root
 import ifcopenshell.api.spatial
 import ifcopenshell.api.unit
 import ifcopenshell.util.element as ue
+import ifcopenshell.util.representation as ur
 
 
 def _pset(m, e, ad, **ozellikler):
@@ -44,12 +45,35 @@ def _yerlestir(m, e, x=0.0, y=0.0, z=0.0):
     ifcopenshell.api.geometry.edit_object_placement(m, product=e, matrix=matris)
 
 
+def _kutu(m, e, en, boy, yukseklik, x=0.0, y=0.0, z=0.0):
+    """Dikdörtgen prizma gövde (mahal hacmi için)."""
+    govde = ur.get_context(m, "Model", "Body", "MODEL_VIEW")
+    profil = m.createIfcRectangleProfileDef(
+        ProfileType="AREA",
+        Position=m.createIfcAxis2Placement2D(m.createIfcCartesianPoint((en / 2, boy / 2))),
+        XDim=en,
+        YDim=boy,
+    )
+    temsil = ifcopenshell.api.geometry.add_profile_representation(
+        m, context=govde, profile=profil, depth=yukseklik
+    )
+    ifcopenshell.api.geometry.assign_representation(m, product=e, representation=temsil)
+    _yerlestir(m, e, x, y, z)
+
+
 def iyi_model() -> ifcopenshell.file:
     m = ifcopenshell.api.project.create_file(version="IFC4X3")
     proje = ifcopenshell.api.root.create_entity(m, ifc_class="IfcProject", name="123456")
     proje.Description = "Konut, 4 kat"
-    ifcopenshell.api.unit.assign_unit(m)
-    ifcopenshell.api.context.add_context(m, context_type="Model")
+    ifcopenshell.api.unit.assign_unit(m, length={"is_metric": True, "raw": "METERS"})
+    model_ctx = ifcopenshell.api.context.add_context(m, context_type="Model")
+    ifcopenshell.api.context.add_context(
+        m,
+        context_type="Model",
+        context_identifier="Body",
+        target_view="MODEL_VIEW",
+        parent=model_ctx,
+    )
     _pset(m, proje, "Pset_ProjectCommon", ProjectType="Yeni yapı")
 
     # EK-7: kişi ve kuruluş
@@ -153,7 +177,11 @@ def iyi_model() -> ifcopenshell.file:
 
     ifcopenshell.api.aggregate.assign_object(m, relating_object=proje, products=[saha])
     ifcopenshell.api.aggregate.assign_object(m, relating_object=saha, products=[bina])
-    ifcopenshell.api.aggregate.assign_object(m, relating_object=bina, products=[kat])
+    kat1 = ifcopenshell.api.root.create_entity(m, ifc_class="IfcBuildingStorey", name="MM-BNK-kat1")
+    kat1.Elevation = 3.0
+    _qto(m, kat1, "Qto_BuildingStoreyBaseQuantities", NetFloorArea=300.0)
+    _pset(m, kat1, "Pset_BuildingStoreyCommon", ElevationOfSSLRelative=3.0)
+    ifcopenshell.api.aggregate.assign_object(m, relating_object=bina, products=[kat, kat1])
 
     duvar = ifcopenshell.api.root.create_entity(
         m, ifc_class="IfcWall", name="MM-DVR-dis_20cm", predefined_type="SOLIDWALL"
@@ -161,7 +189,7 @@ def iyi_model() -> ifcopenshell.file:
     duvar.Tag = "D-01"
     _malzeme(m, duvar, "Beton_C25")
     _pset(m, duvar, "Pset_WallCommon", IsExternal=True, FireRating="REI 60")
-    _yerlestir(m, duvar, 0.0, 0.0, 0.0)
+    _kutu(m, duvar, 8.0, 0.2, 3.0)
 
     doseme = ifcopenshell.api.root.create_entity(
         m, ifc_class="IfcSlab", name="MM-DSM-zemin", predefined_type="FLOOR"
@@ -169,7 +197,7 @@ def iyi_model() -> ifcopenshell.file:
     doseme.Tag = "S-01"
     _malzeme(m, doseme, "Beton_C25")
     _pset(m, doseme, "Pset_SlabCommon", IsExternal=False, FireRating="REI 60")
-    _yerlestir(m, doseme, 0.0, 0.0, 0.0)
+    _kutu(m, doseme, 8.0, 4.0, 0.2, z=-0.2)
 
     kapi = ifcopenshell.api.root.create_entity(
         m, ifc_class="IfcDoor", name="MM-KAP-giris", predefined_type="DOOR"
@@ -179,9 +207,10 @@ def iyi_model() -> ifcopenshell.file:
     _yerlestir(m, kapi, 2.0, 0.0, 0.0)
 
     mahal = ifcopenshell.api.root.create_entity(
-        m, ifc_class="IfcSpace", name="Z01", predefined_type="INTERNAL"
+        m, ifc_class="IfcSpace", name="K00_DAI_001", predefined_type="INTERNAL"
     )
     mahal.LongName = "Salon"
+    _kutu(m, mahal, 5.0, 4.0, 3.0)
     _pset(
         m,
         mahal,
@@ -193,7 +222,22 @@ def iyi_model() -> ifcopenshell.file:
         CeilingCovering="Alçıpan",
         CeilingCoveringThickness=0.0125,
     )
-    _yerlestir(m, mahal, 0.0, 0.0, 0.0)
+    mutfak = ifcopenshell.api.root.create_entity(
+        m, ifc_class="IfcSpace", name="K00_DAI_002", predefined_type="INTERNAL"
+    )
+    mutfak.LongName = "Mutfak"
+    _kutu(m, mutfak, 3.0, 4.0, 3.0, x=5.0)
+    _pset(
+        m,
+        mutfak,
+        "Pset_SpaceCoveringRequirements",
+        FloorCovering="Seramik",
+        FloorCoveringThickness=0.01,
+        WallCovering="Seramik",
+        WallCoveringThickness=0.01,
+        CeilingCovering="Alçıpan",
+        CeilingCoveringThickness=0.0125,
+    )
 
     zon = ifcopenshell.api.root.create_entity(
         m, ifc_class="IfcSpatialZone", name="MM-MZN-emsal_dahil"
@@ -203,7 +247,7 @@ def iyi_model() -> ifcopenshell.file:
     _pset(m, zon, "TREpys_EmsalOzellikSeti", EmsalDurumu="DAHIL")
     _qto(m, zon, "Qto_SpatialZoneBaseQuantities", GrossFloorArea=300.0)
 
-    ifcopenshell.api.aggregate.assign_object(m, relating_object=kat, products=[mahal])
+    ifcopenshell.api.aggregate.assign_object(m, relating_object=kat, products=[mahal, mutfak])
     ifcopenshell.api.aggregate.assign_object(m, relating_object=bina, products=[zon])
     ifcopenshell.api.spatial.assign_container(
         m, relating_structure=kat, products=[duvar, doseme, kapi]
@@ -244,6 +288,24 @@ def kotu_model() -> ifcopenshell.file:
         m, ifc_class="IfcColumn", name="ST-KLN-k1", predefined_type="COLUMN"
     )
     serbest.Tag = "C-01"  # kata bağlanmadı, malzemesi yok
+    yuksek = ifcopenshell.api.root.create_entity(
+        m, ifc_class="IfcColumn", name="ST-KLN-k2", predefined_type="COLUMN"
+    )
+    yuksek.Tag = "C-02"
+    _malzeme(m, yuksek, "Beton_C25")
+    _pset(m, yuksek, "Pset_ColumnCommon", FireRating="REI 60", LoadBearing=True)
+    _kutu(m, yuksek, 0.4, 0.4, 3.0, z=12.0)  # zemin kata bağlı ama 12 m yukarıda
+    ifcopenshell.api.spatial.assign_container(m, relating_structure=kat, products=[yuksek])
     crs = m.by_type("IfcProjectedCRS")[0]
     crs.Name = "EPSG:3857"
+    # Mahaller: biri mutfağın içine giren, biri gövdesiz ve numarası şablon dışı
+    giren = ifcopenshell.api.root.create_entity(
+        m, ifc_class="IfcSpace", name="K00_DAI_003", predefined_type="INTERNAL"
+    )
+    giren.LongName = "Kiler"
+    _kutu(m, giren, 2.0, 2.0, 3.0, x=5.5, y=0.5)
+    bos = ifcopenshell.api.root.create_entity(
+        m, ifc_class="IfcSpace", name="Depo 1", predefined_type="INTERNAL"
+    )
+    ifcopenshell.api.aggregate.assign_object(m, relating_object=kat, products=[giren, bos])
     return m

@@ -25,11 +25,11 @@ def test_iyi_model_hatasiz(iyi_dosya):
     assert rapor.hatalar() == []
     assert rapor.uyarilar() == []
     kararlar = {r["no"]: r["karar"] for r in ek9.satirlar(rapor)}
-    for no in (2, 3, 5, 6, 8, 9, 11, 12, 16, 18, 19):
+    for no in (2, 3, 4, 5, 6, 8, 9, 11, 12, 13, 14, 15, 16, 18, 19):
         assert kararlar[no] == "Evet", no
-    for no in (10, 15):
+    for no in (10,):
         assert kararlar[no] == "Kısmen (elle tamamlanacak)", no
-    for no in (1, 7, 13, 14, 17, 21):
+    for no in (1, 7, 17, 21):
         assert kararlar[no] == "Elle", no
 
 
@@ -46,7 +46,8 @@ def test_kotu_model_bilinen_hatalari_yakalar(kotu_dosya):
         "kat-bagi",
     } <= hata
     uyari = kodlar(rapor, "uyari")
-    assert {"yinelenen-eleman", "on-tanimli-tip", "dosya-adi"} <= uyari
+    assert {"yinelenen-eleman", "on-tanimli-tip", "dosya-adi", "mahal-ortusme", "kat-kotu"} <= uyari
+    assert {"mahal-no-bicim", "mahal-isim-bos", "mahal-govde"} <= hata
     # Duvarın kaldırılan Pset_WallCommon'ı iki ayrı özellik bulgusu üretir, ikisi de EK-9 m.9'a gider.
     duvar_bulgulari = [b for b in rapor.bulgular if b.kod == "ek6-ozellik" and "IfcWall" in b.mesaj]
     assert {b.ek9 for b in duvar_bulgulari} == {9}
@@ -54,6 +55,7 @@ def test_kotu_model_bilinen_hatalari_yakalar(kotu_dosya):
     kararlar = {r["no"]: r["karar"] for r in ek9.satirlar(rapor)}
     assert kararlar[5] == "Hayır" and kararlar[6] == "Hayır" and kararlar[9] == "Hayır"
     assert kararlar[15] == "Hayır" and kararlar[17] == "Hayır"
+    assert kararlar[4] == "Hayır" and kararlar[13] == "Evet (uyarıyla)" and kararlar[14] == "Hayır"
     assert kararlar[16] == "Evet (uyarıyla)"
 
 
@@ -150,5 +152,30 @@ def test_cli_json_ve_ek9(iyi_dosya, kotu_dosya, tmp_path, capsys):
 def test_ozet(iyi_dosya):
     o = ozet(iyi_dosya)
     assert o["schema"] == "IFC4X3" and o["proje"] == "123456"
-    assert o["katlar"] == ["MM-BNK-zemin"] and o["mahalSayisi"] == 1
+    assert o["katlar"] == ["MM-BNK-zemin", "MM-BNK-kat1"] and o["mahalSayisi"] == 2
     assert o["sinifSayilari"]["IfcWall"] == 1
+
+
+def test_ek6_tum_zorunlu_siniflar_ve_semayla_uyum():
+    """68 zorunlu sınıfın tamamı kodlanmış; her öznitelik IFC4X3 şemasında, her Pset özelliği
+    resmî şablonda var (TREpys_ setleri Türkiye'ye özel, şablonda aranmaz)."""
+    import ifcopenshell.util.pset as up
+    from ifcopenshell import ifcopenshell_wrapper as w
+
+    tablolar = veri.ek6_tablolar()
+    zorunlu = [z for z in veri.zorunlu_siniflar() if z != "IfcProject"]
+    assert sorted(tablolar) == sorted(zorunlu)
+    schema = w.schema_by_name("IFC4X3_ADD2")
+    sablon = up.get_template("IFC4X3")
+    for t in tablolar.values():
+        attrs = {a.name() for a in schema.declaration_by_name(t["ifc"]).all_attributes()}
+        for g in t["gerekenler"]:
+            if g["tur"] == "oznitelik":
+                assert g["ad"] in attrs or t["ifc"] == "IfcGroup", (t["ifc"], g["ad"])
+            if g["tur"] == "ozellik" and not g["set"].startswith("TREpys_"):
+                ps = sablon.get_by_name(g["set"])
+                assert ps is not None, g["set"]
+                assert g["ad"] in {p.Name for p in ps.HasPropertyTemplates}, (g["set"], g["ad"])
+        if t["onTanimliTipler"]:
+            enum = set(schema.declaration_by_name(t["ifc"] + "TypeEnum").enumeration_items())
+            assert set(t["onTanimliTipler"]) <= enum, t["ifc"]
