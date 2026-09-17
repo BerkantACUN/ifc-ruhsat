@@ -1,0 +1,1278 @@
+{
+  "kaynak": "RG 5.8.2026 sayı 33331, ek EK-6 Tablo 6.1–6.68 (zorunlu sınıflar); listelenen tablolar nihai metnin sayfalarından görsel olarak doğrulandı (2026-09-17). Doğrulanmamış zorunlu sınıflar için yalnızca Name aranır (KAYNAKLAR.md).",
+  "veriTipleri": {
+    "M": "Metin",
+    "S": "Sayı",
+    "B": "Mantıksal",
+    "SM": "Sayı veya Metin"
+  },
+  "malzemeBicimi": "Malzeme İsmi_Dayanım (örnek: Çelik_S355, Beton_C25)",
+  "tablolar": [
+    {
+      "ifc": "IfcAirTerminal",
+      "tablo": "6.1",
+      "sayfa": 36,
+      "onTanimliTipler": [
+        "DIFFUSER",
+        "GRILLE",
+        "LOUVRE",
+        "REGISTER",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "iliski",
+          "ad": "IfcRelAssignsToGroup>IfcSystem",
+          "veriTipi": "M",
+          "turkce": "Sistem"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_AirTerminalTypeCommon",
+          "ad": "AirFlowRateRange",
+          "veriTipi": "S",
+          "turkce": "Hava Akış Debisi Aralığı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcBeam",
+      "tablo": "6.3",
+      "sayfa": 38,
+      "onTanimliTipler": [
+        "BEAM",
+        "JOIST",
+        "HOLLOWCORE",
+        "LINTEL",
+        "SPANDREL",
+        "T_BEAM",
+        "GIRDER_SEGMENT",
+        "DIAPHRAGM",
+        "PIERCAP",
+        "HATSTONE",
+        "CORNICE",
+        "EDGEBEAM",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BeamCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcBuilding",
+      "tablo": "6.7",
+      "sayfa": 42,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "LongName",
+          "veriTipi": "M",
+          "turkce": "Uzun İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "BuildingID",
+          "veriTipi": "M",
+          "turkce": "Bina Kimliği"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "IsPermanentID",
+          "veriTipi": "B",
+          "turkce": "Kalıcı Kimlik"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "ConstructionMethod",
+          "veriTipi": "M",
+          "turkce": "Yapım Yöntemi"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "FireProtectionClass",
+          "veriTipi": "M",
+          "turkce": "Yangın Koruma Sınıfı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "OccupancyType",
+          "veriTipi": "M",
+          "turkce": "Kullanım Türü"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "GrossPlannedArea",
+          "veriTipi": "S",
+          "turkce": "Brüt Planlanan Alan"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "NetPlannedArea",
+          "veriTipi": "S",
+          "turkce": "Net Planlanan Alan"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingCommon",
+          "ad": "NumberOfStoreys",
+          "veriTipi": "S",
+          "turkce": "Kat Sayısı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_Address",
+          "ad": "AddressLines",
+          "veriTipi": "M",
+          "turkce": "Adres Satırları"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_Address",
+          "ad": "Town",
+          "veriTipi": "M",
+          "turkce": "İl / Kasaba"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_Address",
+          "ad": "Region",
+          "veriTipi": "M",
+          "turkce": "Bölge / İlçe"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_Address",
+          "ad": "PostalBox",
+          "veriTipi": "M",
+          "turkce": "Posta Kutusu"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Qto_BuildingBaseQuantities",
+          "ad": "Height",
+          "veriTipi": "S",
+          "turkce": "Yükseklik"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Qto_BuildingBaseQuantities",
+          "ad": "EavesHeight",
+          "veriTipi": "S",
+          "turkce": "Saçak Yüksekliği"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Qto_BuildingBaseQuantities",
+          "ad": "FootPrintArea",
+          "veriTipi": "S",
+          "turkce": "Taban Alanı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Qto_BuildingBaseQuantities",
+          "ad": "GrossFloorArea",
+          "veriTipi": "S",
+          "turkce": "Brüt Kat Alanı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Qto_BuildingBaseQuantities",
+          "ad": "NetFloorArea",
+          "veriTipi": "S",
+          "turkce": "Net Kat Alanı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcBuildingStorey",
+      "tablo": "6.8",
+      "sayfa": 45,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Qto_BuildingStoreyBaseQuantities",
+          "ad": "NetFloorArea",
+          "veriTipi": "S",
+          "turkce": "Net Kat Alanı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_BuildingStoreyCommon",
+          "ad": "ElevationOfSSLRelative",
+          "veriTipi": "S",
+          "turkce": "Taşıyıcı Döşeme Üst Kotu"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcColumn",
+      "tablo": "6.16",
+      "sayfa": 53,
+      "onTanimliTipler": [
+        "COLUMN",
+        "PIERSTEM",
+        "PIERSTEM_SEGMENT",
+        "PILASTER",
+        "STANDCOLUMN",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ColumnCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ColumnCommon",
+          "ad": "LoadBearing",
+          "veriTipi": "B",
+          "turkce": "Taşıyıcı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCovering",
+      "tablo": "6.20",
+      "sayfa": 58,
+      "onTanimliTipler": [
+        "CEILING",
+        "CLADDING",
+        "COPING",
+        "FLOORING",
+        "INSULATION",
+        "MEMBRANE",
+        "MOLDING",
+        "ROOFING",
+        "SKIRTINGBOARD",
+        "SLEEVING",
+        "TOPPING",
+        "WRAPPING",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "katman",
+          "ad": "IfcMaterialLayer.Material",
+          "veriTipi": "M",
+          "turkce": "Kaplama Malzemesi",
+          "not": "Kaplamalar için: (1) IfcSpace içindeki Pset_SpaceCoveringRequirements ya da (2) IfcCovering'deki katman bilgisi — ikisinden biri zorunlu"
+        },
+        {
+          "tur": "katman",
+          "ad": "IfcMaterialLayer.LayerThickness",
+          "veriTipi": "S",
+          "turkce": "Kaplama Kalınlığı",
+          "not": "aynı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_CoveringCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcCurtainWall",
+      "tablo": "6.21",
+      "sayfa": 60,
+      "onTanimliTipler": [
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_CurtainWallCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcDoor",
+      "tablo": "6.25",
+      "sayfa": 64,
+      "onTanimliTipler": [
+        "BOOM_BARRIER",
+        "DOOR",
+        "GATE",
+        "TRAPDOOR",
+        "TURNSTILE",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_DoorCommon",
+          "ad": "IsExternal",
+          "veriTipi": "B",
+          "turkce": "Dışarıda"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_DoorCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_DoorCommon",
+          "ad": "FireExit",
+          "veriTipi": "B",
+          "turkce": "Acil Çıkış"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcFooting",
+      "tablo": "6.34",
+      "sayfa": 73,
+      "onTanimliTipler": [
+        "CAISSON_FOUNDATION",
+        "FOOTING_BEAM",
+        "PAD_FOOTING",
+        "PILE_CAP",
+        "STRIP_FOOTING",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcFurniture",
+      "tablo": "6.35",
+      "sayfa": 74,
+      "onTanimliTipler": [
+        "BED",
+        "CHAIR",
+        "DESK",
+        "FILECABINET",
+        "SHELF",
+        "SOFA",
+        "TABLE",
+        "TECHNICALCABINET",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcMember",
+      "tablo": "6.40",
+      "sayfa": 79,
+      "onTanimliTipler": [
+        "ARCH_SEGMENT",
+        "BRACE",
+        "CHORD",
+        "COLLAR",
+        "MEMBER",
+        "MULLION",
+        "PLATE",
+        "POST",
+        "PURLIN",
+        "RAFTER",
+        "STAY_CABLE",
+        "STIFFENING_RIB",
+        "STRINGER",
+        "STRUCTURALCABLE",
+        "STRUT",
+        "STUD",
+        "SUSPENDER",
+        "SUSPENSION_CABLE",
+        "TIEBAR",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_MemberCommon",
+          "ad": "IsExternal",
+          "veriTipi": "B",
+          "turkce": "Dışarıda"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcOpeningElement",
+      "tablo": "6.41",
+      "sayfa": 80,
+      "onTanimliTipler": [
+        "OPENING",
+        "RECESS",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcRailing",
+      "tablo": "6.48",
+      "sayfa": 87,
+      "onTanimliTipler": [
+        "HANDRAIL",
+        "GUARDRAIL",
+        "BALUSTRADE",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcRamp",
+      "tablo": "6.49",
+      "sayfa": 88,
+      "onTanimliTipler": [
+        "STRAIGHT_RUN_RAMP",
+        "TWO_STRAIGHT_RUN_RAMP",
+        "QUARTER_TURN_RAMP",
+        "TWO_QUARTER_TURN_RAMP",
+        "HALF_TURN_RAMP",
+        "SPIRAL_RAMP",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcRoof",
+      "tablo": "6.52",
+      "sayfa": 91,
+      "onTanimliTipler": [
+        "FLAT_ROOF",
+        "SHED_ROOF",
+        "GABLE_ROOF",
+        "HIP_ROOF",
+        "HIPPED_GABLE_ROOF",
+        "GAMBREL_ROOF",
+        "MANSARD_ROOF",
+        "BARREL_ROOF",
+        "RAINBOW_ROOF",
+        "BUTTERFLY_ROOF",
+        "PAVILION_ROOF",
+        "DOME_ROOF",
+        "FREEFORM",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_RoofCommon",
+          "ad": "IsExternal",
+          "veriTipi": "B",
+          "turkce": "Dışarıda"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_RoofCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcSite",
+      "tablo": "6.55",
+      "sayfa": 94,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "ObjectType",
+          "veriTipi": "M",
+          "turkce": "Nesne Tipi"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "LongName",
+          "veriTipi": "M",
+          "turkce": "Uzun İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "RefElevation",
+          "veriTipi": "S",
+          "turkce": "Referans Kotu"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SiteCommon",
+          "ad": "FloorAreaRatio",
+          "veriTipi": "S",
+          "turkce": "Kat Alanı Oranı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SiteCommon",
+          "ad": "SiteCoverageRatio",
+          "veriTipi": "S",
+          "turkce": "Saha Kapsama Oranı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SiteCommon",
+          "ad": "TotalArea",
+          "veriTipi": "S",
+          "turkce": "Toplam Alan"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_Address",
+          "ad": "AddressLines",
+          "veriTipi": "M",
+          "turkce": "Adres Satırları"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_Address",
+          "ad": "Town",
+          "veriTipi": "M",
+          "turkce": "İl / Kasaba"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_Address",
+          "ad": "Region",
+          "veriTipi": "M",
+          "turkce": "Bölge / İlçe"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_LandRegistration",
+          "ad": "LandID",
+          "veriTipi": "M",
+          "turkce": "Parsel Numarası"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_LandRegistration",
+          "ad": "LandTitleID",
+          "veriTipi": "M",
+          "turkce": "Tapu Numarası"
+        },
+        {
+          "tur": "ozellik",
+          "set": "TREpys_ParselOzellikSeti",
+          "ad": "TAKS",
+          "veriTipi": "S",
+          "turkce": "Taban Alanı Kat Sayısı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "TREpys_ParselOzellikSeti",
+          "ad": "KAKS",
+          "veriTipi": "S",
+          "turkce": "Kat Alanı Kat Sayısı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "TREpys_ParselOzellikSeti",
+          "ad": "CekmeOn",
+          "veriTipi": "S",
+          "turkce": "Ön bahçe mesafesi"
+        },
+        {
+          "tur": "ozellik",
+          "set": "TREpys_ParselOzellikSeti",
+          "ad": "CekmeYan",
+          "veriTipi": "S",
+          "turkce": "Yan bahçe mesafesi"
+        },
+        {
+          "tur": "ozellik",
+          "set": "TREpys_ParselOzellikSeti",
+          "ad": "CekmeArka",
+          "veriTipi": "S",
+          "turkce": "Arka bahçe mesafesi"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcSlab",
+      "tablo": "6.56",
+      "sayfa": 96,
+      "onTanimliTipler": [
+        "APPROACH_SLAB",
+        "BASESLAB",
+        "FLOOR",
+        "LANDING",
+        "PAVING",
+        "ROOF",
+        "SIDEWALK",
+        "TRACKSLAB",
+        "WEARING",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SlabCommon",
+          "ad": "IsExternal",
+          "veriTipi": "B",
+          "turkce": "Dışarıda"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SlabCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcSpace",
+      "tablo": "6.58",
+      "sayfa": 98,
+      "onTanimliTipler": [
+        "SPACE",
+        "PARKING",
+        "GFA",
+        "INTERNAL",
+        "EXTERNAL",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SpaceCoveringRequirements",
+          "ad": "FloorCovering",
+          "veriTipi": "M",
+          "turkce": "Zemin Kaplaması"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SpaceCoveringRequirements",
+          "ad": "FloorCoveringThickness",
+          "veriTipi": "S",
+          "turkce": "Zemin Kaplama Kalınlığı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SpaceCoveringRequirements",
+          "ad": "WallCovering",
+          "veriTipi": "M",
+          "turkce": "Duvar Kaplaması"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SpaceCoveringRequirements",
+          "ad": "WallCoveringThickness",
+          "veriTipi": "S",
+          "turkce": "Duvar Kaplama Kalınlığı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SpaceCoveringRequirements",
+          "ad": "CeilingCovering",
+          "veriTipi": "M",
+          "turkce": "Tavan Kaplaması"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_SpaceCoveringRequirements",
+          "ad": "CeilingCoveringThickness",
+          "veriTipi": "S",
+          "turkce": "Tavan Kaplama Kalınlığı"
+        }
+      ],
+      "not": "Kaplama özellikleri: IfcSpace'te bu set ya da IfcCovering'de katman bilgisi — ikisinden biri zorunlu (Tablo 6.58 dipnot **). Araç ikisini birlikte değerlendirir."
+    },
+    {
+      "ifc": "IfcSpatialZone",
+      "tablo": "6.60",
+      "sayfa": 101,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Description",
+          "veriTipi": "M",
+          "turkce": "Açıklama"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "LongName",
+          "veriTipi": "M",
+          "turkce": "Uzun İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "ozellik",
+          "set": "TREpys_EmsalOzellikSeti",
+          "ad": "EmsalDurumu",
+          "veriTipi": "M",
+          "turkce": "Emsal Durumu",
+          "degerler": [
+            "DAHIL",
+            "HARIC",
+            "DIGER"
+          ]
+        }
+      ]
+    },
+    {
+      "ifc": "IfcStair",
+      "tablo": "6.61",
+      "sayfa": 102,
+      "onTanimliTipler": [
+        "STRAIGHT_RUN_STAIR",
+        "TWO_STRAIGHT_RUN_STAIR",
+        "QUARTER_WINDING_STAIR",
+        "QUARTER_TURN_STAIR",
+        "HALF_WINDING_STAIR",
+        "HALF_TURN_STAIR",
+        "TWO_QUARTER_WINDING_STAIR",
+        "TWO_QUARTER_TURN_STAIR",
+        "THREE_QUARTER_WINDING_STAIR",
+        "THREE_QUARTER_TURN_STAIR",
+        "SPIRAL_STAIR",
+        "DOUBLE_RETURN_STAIR",
+        "CURVED_RUN_STAIR",
+        "TWO_CURVED_RUN_STAIR",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_StairCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_StairCommon",
+          "ad": "FireExit",
+          "veriTipi": "B",
+          "turkce": "Acil Çıkış"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcWall",
+      "tablo": "6.66",
+      "sayfa": 107,
+      "onTanimliTipler": [
+        "ELEMENTEDWALL",
+        "MOVABLE",
+        "PARAPET",
+        "PARTITIONING",
+        "PLUMBINGWALL",
+        "POLYGONAL",
+        "RETAININGWALL",
+        "SHEAR",
+        "SOLIDWALL",
+        "STANDARD",
+        "WAVEWALL",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "malzeme",
+          "ad": "IfcRelAssociatesMaterial>IfcMaterial.Name",
+          "veriTipi": "M",
+          "turkce": "Malzeme",
+          "not": "Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_WallCommon",
+          "ad": "IsExternal",
+          "veriTipi": "B",
+          "turkce": "Dışarıda"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_WallCommon",
+          "ad": "FireRating",
+          "veriTipi": "M",
+          "turkce": "Yangın Dayanım Sınıfı"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcWindow",
+      "tablo": "6.67",
+      "sayfa": 108,
+      "onTanimliTipler": [
+        "WINDOW",
+        "SKYLIGHT",
+        "LIGHTDOME",
+        "USERDEFINED",
+        "NOTDEFINED"
+      ],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "PredefinedType",
+          "veriTipi": "M",
+          "turkce": "Ön Tanımlı Tip"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Tag",
+          "veriTipi": "SM",
+          "turkce": "Etiket"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_WindowCommon",
+          "ad": "IsExternal",
+          "veriTipi": "B",
+          "turkce": "Dışarıda"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcZone",
+      "tablo": "6.68",
+      "sayfa": 109,
+      "onTanimliTipler": [],
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "LongName",
+          "veriTipi": "M",
+          "turkce": "Uzun İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "ObjectType",
+          "veriTipi": "M",
+          "turkce": "Nesne Tipi"
+        }
+      ]
+    }
+  ]
+}

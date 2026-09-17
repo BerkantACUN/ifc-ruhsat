@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.BerkantACUN/ifc-ruhsat",
+  "description": "Yapı ruhsatı IFC modelini Türkiye dijital proje yönetmeliğine (RG 33331) göre denetler; EK-9 formu",
+  "repository": {
+    "url": "https://github.com/BerkantACUN/ifc-ruhsat",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "ifc-ruhsat",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}

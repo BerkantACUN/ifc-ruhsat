@@ -1,0 +1,1 @@
+"""Yönetmelik ekleri, JSON."""

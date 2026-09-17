@@ -1,0 +1,829 @@
+{
+  "kaynak": "RG 5.8.2026 sayı 33331, ek EK-5 Tablo 5.1 (zorunlu, s.29–31) ve Tablo 5.2 (isteğe bağlı, s.31–33); IFC 4.3 (EK-5 5.4); görsel doğrulama 2026-09-17",
+  "isimlendirme": {
+    "sablon": "Disiplin-KategoriKodu-Açıklama",
+    "alan_ayirici": "-",
+    "aciklama_ayirici": "_",
+    "not": "EK-5 5.5: bilgi alanları orta tire ile, açıklama içindeki alt bilgiler alt tire ile ayrılır; açıklama içinde orta tire kullanılmaz. Yönetmelik m.11(2) açıklama için orta tire der — EK-5 daha özel kural olduğundan bu araç EK-5'i uygular ve çelişkiyi raporlar."
+  },
+  "zorunlu": [
+    {
+      "sira": 1,
+      "ifc": "IfcAirTerminal",
+      "turkce": "Havalandırma Menfezi",
+      "kod": "HVM"
+    },
+    {
+      "sira": 2,
+      "ifc": "IfcAudioVisualAppliance",
+      "turkce": "Görsel ve Ses Cihaz",
+      "kod": "GVS"
+    },
+    {
+      "sira": 3,
+      "ifc": "IfcBeam",
+      "turkce": "Kiriş",
+      "kod": "KRS"
+    },
+    {
+      "sira": 4,
+      "ifc": "IfcBoiler",
+      "turkce": "Kazan",
+      "kod": "KZN"
+    },
+    {
+      "sira": 5,
+      "ifc": "IfcBridge",
+      "turkce": "Köprü",
+      "kod": "KPR"
+    },
+    {
+      "sira": 6,
+      "ifc": "IfcBridgePart",
+      "turkce": "Köprü Parçası",
+      "kod": "KPP"
+    },
+    {
+      "sira": 7,
+      "ifc": "IfcBuilding",
+      "turkce": "Bina",
+      "kod": "BNA"
+    },
+    {
+      "sira": 8,
+      "ifc": "IfcBuildingStorey",
+      "turkce": "Bina Katı",
+      "kod": "BNK"
+    },
+    {
+      "sira": 9,
+      "ifc": "IfcBurner",
+      "turkce": "Brülör",
+      "kod": "BRL"
+    },
+    {
+      "sira": 10,
+      "ifc": "IfcCableCarrierFitting",
+      "turkce": "Kablo Taşıyıcı Bağlantı Parçası",
+      "kod": "KTB"
+    },
+    {
+      "sira": 11,
+      "ifc": "IfcCableCarrierSegment",
+      "turkce": "Kablo Taşıyıcı Segment",
+      "kod": "KTS"
+    },
+    {
+      "sira": 12,
+      "ifc": "IfcCaissonFoundation",
+      "turkce": "Keson Temeli",
+      "kod": "KST"
+    },
+    {
+      "sira": 13,
+      "ifc": "IfcChiller",
+      "turkce": "Soğutma Grubu",
+      "kod": "SGT"
+    },
+    {
+      "sira": 14,
+      "ifc": "IfcChimney",
+      "turkce": "Baca",
+      "kod": "BAC"
+    },
+    {
+      "sira": 15,
+      "ifc": "IfcCoil",
+      "turkce": "Serpantin",
+      "kod": "SRP"
+    },
+    {
+      "sira": 16,
+      "ifc": "IfcColumn",
+      "turkce": "Kolon",
+      "kod": "KLN"
+    },
+    {
+      "sira": 17,
+      "ifc": "IfcCommunicationsAppliance",
+      "turkce": "İletişim Cihazı",
+      "kod": "ILT"
+    },
+    {
+      "sira": 18,
+      "ifc": "IfcCondenser",
+      "turkce": "Kondenser",
+      "kod": "KND"
+    },
+    {
+      "sira": 19,
+      "ifc": "IfcCoolingTower",
+      "turkce": "Soğutma Kulesi",
+      "kod": "SKL"
+    },
+    {
+      "sira": 20,
+      "ifc": "IfcCovering",
+      "turkce": "Kaplama",
+      "kod": "KPL"
+    },
+    {
+      "sira": 21,
+      "ifc": "IfcCurtainWall",
+      "turkce": "Giydirme Cephe",
+      "kod": "GDC"
+    },
+    {
+      "sira": 22,
+      "ifc": "IfcDamper",
+      "turkce": "Damper",
+      "kod": "DMP"
+    },
+    {
+      "sira": 23,
+      "ifc": "IfcDistributionBoard",
+      "turkce": "Dağıtım Panosu",
+      "kod": "DPN"
+    },
+    {
+      "sira": 24,
+      "ifc": "IfcDistributionSystem",
+      "turkce": "Dağıtım Sistemi",
+      "kod": "DGS"
+    },
+    {
+      "sira": 25,
+      "ifc": "IfcDoor",
+      "turkce": "Kapı",
+      "kod": "KAP"
+    },
+    {
+      "sira": 26,
+      "ifc": "IfcDuctFitting",
+      "turkce": "Kanal Bağlantı Parçası",
+      "kod": "KBP"
+    },
+    {
+      "sira": 27,
+      "ifc": "IfcDuctSegment",
+      "turkce": "Kanal Segmenti",
+      "kod": "KNS"
+    },
+    {
+      "sira": 28,
+      "ifc": "IfcDuctSilencer",
+      "turkce": "Kanal Susturucusu",
+      "kod": "KSS"
+    },
+    {
+      "sira": 29,
+      "ifc": "IfcElectricAppliance",
+      "turkce": "Elektrikli Cihaz",
+      "kod": "ECZ"
+    },
+    {
+      "sira": 30,
+      "ifc": "IfcElectricGenerator",
+      "turkce": "Elektrik Jeneratörü",
+      "kod": "EJN"
+    },
+    {
+      "sira": 31,
+      "ifc": "IfcEvaporator",
+      "turkce": "Evaporatör",
+      "kod": "EVP"
+    },
+    {
+      "sira": 32,
+      "ifc": "IfcFan",
+      "turkce": "Fan",
+      "kod": "FAN"
+    },
+    {
+      "sira": 33,
+      "ifc": "IfcFireSuppressionTerminal",
+      "turkce": "Yangın Söndürme Terminali",
+      "kod": "YST"
+    },
+    {
+      "sira": 34,
+      "ifc": "IfcFooting",
+      "turkce": "Temel",
+      "kod": "TML"
+    },
+    {
+      "sira": 35,
+      "ifc": "IfcFurniture",
+      "turkce": "Mobilya",
+      "kod": "MBL"
+    },
+    {
+      "sira": 36,
+      "ifc": "IfcGridAxis",
+      "turkce": "Aks",
+      "kod": "AKS"
+    },
+    {
+      "sira": 37,
+      "ifc": "IfcGroup",
+      "turkce": "Grup",
+      "kod": "GRP"
+    },
+    {
+      "sira": 38,
+      "ifc": "IfcHeatExchanger",
+      "turkce": "Isı Eşanjörü",
+      "kod": "IEJ"
+    },
+    {
+      "sira": 39,
+      "ifc": "IfcLightFixture",
+      "turkce": "Aydınlatma Armatürü",
+      "kod": "AYN"
+    },
+    {
+      "sira": 40,
+      "ifc": "IfcMember",
+      "turkce": "Eleman",
+      "kod": "ELM"
+    },
+    {
+      "sira": 41,
+      "ifc": "IfcOpeningElement",
+      "turkce": "Açıklık Elemanı",
+      "kod": "ACL"
+    },
+    {
+      "sira": 42,
+      "ifc": "IfcOutlet",
+      "turkce": "Priz",
+      "kod": "PRZ"
+    },
+    {
+      "sira": 43,
+      "ifc": "IfcPavement",
+      "turkce": "Asfalt",
+      "kod": "ASF"
+    },
+    {
+      "sira": 44,
+      "ifc": "IfcPile",
+      "turkce": "Kazık",
+      "kod": "KZK"
+    },
+    {
+      "sira": 45,
+      "ifc": "IfcPipeFitting",
+      "turkce": "Boru Bağlantı Parçası",
+      "kod": "BBP"
+    },
+    {
+      "sira": 46,
+      "ifc": "IfcPipeSegment",
+      "turkce": "Boru Segmenti",
+      "kod": "BRS"
+    },
+    {
+      "sira": 47,
+      "ifc": "IfcPump",
+      "turkce": "Pompa",
+      "kod": "PMP"
+    },
+    {
+      "sira": 48,
+      "ifc": "IfcRailing",
+      "turkce": "Korkuluk",
+      "kod": "KRK"
+    },
+    {
+      "sira": 49,
+      "ifc": "IfcRamp",
+      "turkce": "Rampa",
+      "kod": "RMP"
+    },
+    {
+      "sira": 50,
+      "ifc": "IfcRoad",
+      "turkce": "Yol",
+      "kod": "YOL"
+    },
+    {
+      "sira": 51,
+      "ifc": "IfcRoadPart",
+      "turkce": "Yol Parçası",
+      "kod": "YLP"
+    },
+    {
+      "sira": 52,
+      "ifc": "IfcRoof",
+      "turkce": "Çatı",
+      "kod": "CAT"
+    },
+    {
+      "sira": 53,
+      "ifc": "IfcSanitaryTerminal",
+      "turkce": "Sıhhi Terminal",
+      "kod": "STT"
+    },
+    {
+      "sira": 54,
+      "ifc": "IfcSign",
+      "turkce": "Tabela",
+      "kod": "TBL"
+    },
+    {
+      "sira": 55,
+      "ifc": "IfcSite",
+      "turkce": "Saha",
+      "kod": "SAH"
+    },
+    {
+      "sira": 56,
+      "ifc": "IfcSlab",
+      "turkce": "Döşeme",
+      "kod": "DSM"
+    },
+    {
+      "sira": 57,
+      "ifc": "IfcSolarDevice",
+      "turkce": "Güneş Enerjisi Cihazı",
+      "kod": "GEC"
+    },
+    {
+      "sira": 58,
+      "ifc": "IfcSpace",
+      "turkce": "Mahal",
+      "kod": "MHL"
+    },
+    {
+      "sira": 59,
+      "ifc": "IfcSpaceHeater",
+      "turkce": "Mekan Isıtıcısı",
+      "kod": "MIS"
+    },
+    {
+      "sira": 60,
+      "ifc": "IfcSpatialZone",
+      "turkce": "Mekansal Zon",
+      "kod": "MZN"
+    },
+    {
+      "sira": 61,
+      "ifc": "IfcStair",
+      "turkce": "Merdiven",
+      "kod": "MRD"
+    },
+    {
+      "sira": 62,
+      "ifc": "IfcTank",
+      "turkce": "Tank",
+      "kod": "TNK"
+    },
+    {
+      "sira": 63,
+      "ifc": "IfcTransformer",
+      "turkce": "Transformatör",
+      "kod": "TRF"
+    },
+    {
+      "sira": 64,
+      "ifc": "IfcTransportElement",
+      "turkce": "Taşıma Elemanı",
+      "kod": "TSM"
+    },
+    {
+      "sira": 65,
+      "ifc": "IfcValve",
+      "turkce": "Vana",
+      "kod": "VNA"
+    },
+    {
+      "sira": 66,
+      "ifc": "IfcWall",
+      "turkce": "Duvar",
+      "kod": "DVR"
+    },
+    {
+      "sira": 67,
+      "ifc": "IfcWindow",
+      "turkce": "Pencere",
+      "kod": "PNC"
+    },
+    {
+      "sira": 68,
+      "ifc": "IfcZone",
+      "turkce": "Zon",
+      "kod": "ZON"
+    },
+    {
+      "sira": 69,
+      "ifc": "IfcProject",
+      "turkce": "Proje",
+      "kod": null
+    }
+  ],
+  "istege_bagli": [
+    {
+      "sira": 1,
+      "ifc": "IfcActuator",
+      "turkce": "Aktüatör",
+      "kod": "AKT"
+    },
+    {
+      "sira": 2,
+      "ifc": "IfcAirTerminalBox",
+      "turkce": "Hava Terminal Kutusu",
+      "kod": "HTK"
+    },
+    {
+      "sira": 3,
+      "ifc": "IfcAirToAirHeatRecovery",
+      "turkce": "Hava-Hava Isı Geri Kazanım Cihazı",
+      "kod": "HIG"
+    },
+    {
+      "sira": 4,
+      "ifc": "IfcAlarm",
+      "turkce": "Alarm",
+      "kod": "ALR"
+    },
+    {
+      "sira": 5,
+      "ifc": "IfcCableFitting",
+      "turkce": "Kablo Elemanı (Uç)",
+      "kod": "KLU"
+    },
+    {
+      "sira": 6,
+      "ifc": "IfcCableSegment",
+      "turkce": "Kablo Segmenti",
+      "kod": "KBS"
+    },
+    {
+      "sira": 7,
+      "ifc": "IfcCompressor",
+      "turkce": "Kompresör",
+      "kod": "KMP"
+    },
+    {
+      "sira": 8,
+      "ifc": "IfcController",
+      "turkce": "Kontrol Cihazı",
+      "kod": "KNT"
+    },
+    {
+      "sira": 9,
+      "ifc": "IfcConveyorSegment",
+      "turkce": "Konveyör Segmenti",
+      "kod": "KVS"
+    },
+    {
+      "sira": 10,
+      "ifc": "IfcCooledBeam",
+      "turkce": "Soğutmalı Kiriş",
+      "kod": "SKR"
+    },
+    {
+      "sira": 11,
+      "ifc": "IfcDiscreteAccessory",
+      "turkce": "Küçük Donatı Elemanı",
+      "kod": "KDE"
+    },
+    {
+      "sira": 12,
+      "ifc": "IfcDistributionChamberElement",
+      "turkce": "Dağıtım Odası Elemanı",
+      "kod": "DOE"
+    },
+    {
+      "sira": 13,
+      "ifc": "IfcDistributionCircuit",
+      "turkce": "Dağıtım Devresi",
+      "kod": "DDV"
+    },
+    {
+      "sira": 14,
+      "ifc": "IfcDistributionPort",
+      "turkce": "Dağıtım Portu",
+      "kod": "DPT"
+    },
+    {
+      "sira": 15,
+      "ifc": "IfcEarthworksCut",
+      "turkce": "Kazı İşleri",
+      "kod": "KZI"
+    },
+    {
+      "sira": 16,
+      "ifc": "IfcEarthworksFill",
+      "turkce": "Dolgu İşleri",
+      "kod": "DGI"
+    },
+    {
+      "sira": 17,
+      "ifc": "IfcElectricFlowStorageDevice",
+      "turkce": "Elektrik Akış Depolama Cihazı",
+      "kod": "EAD"
+    },
+    {
+      "sira": 18,
+      "ifc": "IfcElectricFlowTreatmentDevice",
+      "turkce": "Elektrik Akış İşleme Cihazı",
+      "kod": "EAI"
+    },
+    {
+      "sira": 19,
+      "ifc": "IfcElectricMotor",
+      "turkce": "Elektrik Motoru",
+      "kod": "EMO"
+    },
+    {
+      "sira": 20,
+      "ifc": "IfcElectricTimeControl",
+      "turkce": "Elektrik Zaman Kontrol Cihazı",
+      "kod": "EZK"
+    },
+    {
+      "sira": 21,
+      "ifc": "IfcElementAssembly",
+      "turkce": "Eleman Montajı",
+      "kod": "EMN"
+    },
+    {
+      "sira": 22,
+      "ifc": "IfcEngine",
+      "turkce": "Motor (Engine)",
+      "kod": "MTR"
+    },
+    {
+      "sira": 23,
+      "ifc": "IfcEvaporativeCooler",
+      "turkce": "Buharlaşmalı Soğutucu",
+      "kod": "BSC"
+    },
+    {
+      "sira": 24,
+      "ifc": "IfcExternalSpatialElement",
+      "turkce": "Dış Mekan Elemanı",
+      "kod": "DME"
+    },
+    {
+      "sira": 25,
+      "ifc": "IfcFacilityPartCommon",
+      "turkce": "Tesis Ortak Bölümü",
+      "kod": "TOB"
+    },
+    {
+      "sira": 26,
+      "ifc": "IfcFilter",
+      "turkce": "Filtre",
+      "kod": "FLT"
+    },
+    {
+      "sira": 27,
+      "ifc": "IfcFlowInstrument",
+      "turkce": "Akış Ölçer Cihazı",
+      "kod": "AOC"
+    },
+    {
+      "sira": 28,
+      "ifc": "IfcFlowMeter",
+      "turkce": "Akış Sayacı",
+      "kod": "ASY"
+    },
+    {
+      "sira": 29,
+      "ifc": "IfcGeographicElement",
+      "turkce": "Coğrafi Eleman",
+      "kod": "COG"
+    },
+    {
+      "sira": 30,
+      "ifc": "IfcGeomodel",
+      "turkce": "Coğrafi Model",
+      "kod": "CGM"
+    },
+    {
+      "sira": 31,
+      "ifc": "IfcGeoslice",
+      "turkce": "Coğrafi Dilim",
+      "kod": "CDL"
+    },
+    {
+      "sira": 32,
+      "ifc": "IfcGeotechnicalStratum",
+      "turkce": "Jeoteknik Katman",
+      "kod": "JTK"
+    },
+    {
+      "sira": 33,
+      "ifc": "IfcHumidifier",
+      "turkce": "Nemlendirici",
+      "kod": "NML"
+    },
+    {
+      "sira": 34,
+      "ifc": "IfcImpactProtectionDevice",
+      "turkce": "Darbe Koruma Cihazı",
+      "kod": "DKC"
+    },
+    {
+      "sira": 35,
+      "ifc": "IfcInterceptor",
+      "turkce": "Tutucu / Ayırıcı (Interceptor)",
+      "kod": "TTA"
+    },
+    {
+      "sira": 36,
+      "ifc": "IfcJunctionBox",
+      "turkce": "Bağlantı Kutusu",
+      "kod": "BKT"
+    },
+    {
+      "sira": 37,
+      "ifc": "IfcKerb",
+      "turkce": "Bordür",
+      "kod": "BRD"
+    },
+    {
+      "sira": 38,
+      "ifc": "IfcLamp",
+      "turkce": "Lamba",
+      "kod": "LMB"
+    },
+    {
+      "sira": 39,
+      "ifc": "IfcLiquidTerminal",
+      "turkce": "Sıvı Terminali",
+      "kod": "STM"
+    },
+    {
+      "sira": 40,
+      "ifc": "IfcMechanicalFastener",
+      "turkce": "Mekanik Bağlantı Elemanı",
+      "kod": "MBE"
+    },
+    {
+      "sira": 41,
+      "ifc": "IfcMedicalDevice",
+      "turkce": "Medikal Cihaz",
+      "kod": "MDC"
+    },
+    {
+      "sira": 42,
+      "ifc": "IfcMobileTelecommunicationsAppliance",
+      "turkce": "Mobil Telekomünikasyon Cihazı",
+      "kod": "MTC"
+    },
+    {
+      "sira": 43,
+      "ifc": "IfcMooringDevice",
+      "turkce": "Halat / Bağlama Cihazı",
+      "kod": "HBC"
+    },
+    {
+      "sira": 44,
+      "ifc": "IfcMotorConnection",
+      "turkce": "Motor Bağlantısı",
+      "kod": "MBA"
+    },
+    {
+      "sira": 45,
+      "ifc": "IfcNavigationElement",
+      "turkce": "Seyir Elemanı",
+      "kod": "SEY"
+    },
+    {
+      "sira": 46,
+      "ifc": "IfcProjectionElement",
+      "turkce": "Projeksiyon Elemanı",
+      "kod": "PJE"
+    },
+    {
+      "sira": 47,
+      "ifc": "IfcProtectiveDevice",
+      "turkce": "Koruma Cihazı",
+      "kod": "KRC"
+    },
+    {
+      "sira": 48,
+      "ifc": "IfcProtectiveDeviceTrippingUnit",
+      "turkce": "Koruma Cihazı Açma Ünitesi",
+      "kod": "KAU"
+    },
+    {
+      "sira": 49,
+      "ifc": "IfcRail",
+      "turkce": "Ray",
+      "kod": "RAY"
+    },
+    {
+      "sira": 50,
+      "ifc": "IfcRampFlight",
+      "turkce": "Rampa Kolu",
+      "kod": "RMK"
+    },
+    {
+      "sira": 51,
+      "ifc": "IfcReinforcedSoil",
+      "turkce": "Donatılı Zemin",
+      "kod": "DNZ"
+    },
+    {
+      "sira": 52,
+      "ifc": "IfcSensor",
+      "turkce": "Sensör",
+      "kod": "SNS"
+    },
+    {
+      "sira": 53,
+      "ifc": "IfcShadingDevice",
+      "turkce": "Güneş Kırıcı",
+      "kod": "GNK"
+    },
+    {
+      "sira": 54,
+      "ifc": "IfcSignal",
+      "turkce": "Sinyal",
+      "kod": "SNY"
+    },
+    {
+      "sira": 55,
+      "ifc": "IfcStackTerminal",
+      "turkce": "Yığın Terminali",
+      "kod": "YTN"
+    },
+    {
+      "sira": 56,
+      "ifc": "IfcStairFlight",
+      "turkce": "Merdiven Kolu",
+      "kod": "MRK"
+    },
+    {
+      "sira": 57,
+      "ifc": "IfcSwitchingDevice",
+      "turkce": "Anahtarlama Cihazı",
+      "kod": "AHC"
+    },
+    {
+      "sira": 58,
+      "ifc": "IfcSystemFurnitureElement",
+      "turkce": "Sistem Mobilya Elemanı",
+      "kod": "SME"
+    },
+    {
+      "sira": 59,
+      "ifc": "IfcTubeBundle",
+      "turkce": "Boru Demeti",
+      "kod": "BDM"
+    },
+    {
+      "sira": 60,
+      "ifc": "IfcUnitaryControlElement",
+      "turkce": "Üniter Kontrol Elemanı",
+      "kod": "UKE"
+    },
+    {
+      "sira": 61,
+      "ifc": "IfcUnitaryEquipment",
+      "turkce": "Üniter Ekipman",
+      "kod": "UEK"
+    },
+    {
+      "sira": 62,
+      "ifc": "IfcVibrationDamper",
+      "turkce": "Titreşim Sönümleyici",
+      "kod": "TSD"
+    },
+    {
+      "sira": 63,
+      "ifc": "IfcVibrationIsolator",
+      "turkce": "Titreşim İzolatörü",
+      "kod": "TIZ"
+    },
+    {
+      "sira": 64,
+      "ifc": "IfcVirtualElement",
+      "turkce": "Sanal Eleman",
+      "kod": "SNE"
+    },
+    {
+      "sira": 65,
+      "ifc": "IfcVehicle",
+      "turkce": "Araç",
+      "kod": "ARC"
+    },
+    {
+      "sira": 66,
+      "ifc": "IfcVoidingFeature",
+      "turkce": "Boşaltma Özelliği",
+      "kod": "BOS"
+    },
+    {
+      "sira": 67,
+      "ifc": "IfcWasteTerminal",
+      "turkce": "Atık Terminali",
+      "kod": "ATK"
+    }
+  ]
+}

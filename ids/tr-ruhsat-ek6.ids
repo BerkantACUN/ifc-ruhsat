@@ -1,0 +1,1071 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>Mimarlık ve Mühendislik Projelerinin Dijital Olarak Hazırlanması Hakkında Yönetmelik — EK-6</title>
+        <version>0.1.0</version>
+        <description>RG 5.8.2026, sayı 33331 EK-6 tablolarının IDS karşılığı; ifc-ruhsat 0.1.0 tarafından üretildi. Kapsam: kodlanmış tablolar (KAYNAKLAR.md). Malzeme adı biçimi, IfcSystem ilişkisi, kaplama seçeneği ve koordinat dönüşümü IDS dışında, araçta denetlenir.</description>
+        <purpose>Yapı ruhsatı teslim öncesi model kontrolü</purpose>
+        <milestone>Ruhsat</milestone>
+    </info>
+    <specifications>
+        <specification name="EK-6 Tablo 6.1 — IfcAirTerminal" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.1" description="RG 5.8.2026, sayı 33331 ek s.36">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCAIRTERMINAL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Hava Akış Debisi Aralığı">
+                    <propertySet>
+                        <simpleValue>Pset_AirTerminalTypeCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>AirFlowRateRange</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.3 — IfcBeam" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.3" description="RG 5.8.2026, sayı 33331 ek s.38">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBEAM</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_BeamCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.7 — IfcBuilding" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.7" description="RG 5.8.2026, sayı 33331 ek s.42">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBUILDING</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Uzun İsim">
+                    <name>
+                        <simpleValue>LongName</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Bina Kimliği">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>BuildingID</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Kalıcı Kimlik">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsPermanentID</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yapım Yöntemi">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>ConstructionMethod</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Koruma Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireProtectionClass</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Kullanım Türü">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>OccupancyType</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Brüt Planlanan Alan">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>GrossPlannedArea</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Net Planlanan Alan">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NetPlannedArea</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Kat Sayısı">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NumberOfStoreys</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Adres Satırları">
+                    <propertySet>
+                        <simpleValue>Pset_Address</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>AddressLines</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="İl / Kasaba">
+                    <propertySet>
+                        <simpleValue>Pset_Address</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Town</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Bölge / İlçe">
+                    <propertySet>
+                        <simpleValue>Pset_Address</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Region</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Posta Kutusu">
+                    <propertySet>
+                        <simpleValue>Pset_Address</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>PostalBox</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Yükseklik">
+                    <propertySet>
+                        <simpleValue>Qto_BuildingBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Height</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Saçak Yüksekliği">
+                    <propertySet>
+                        <simpleValue>Qto_BuildingBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>EavesHeight</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Taban Alanı">
+                    <propertySet>
+                        <simpleValue>Qto_BuildingBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FootPrintArea</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Brüt Kat Alanı">
+                    <propertySet>
+                        <simpleValue>Qto_BuildingBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>GrossFloorArea</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Net Kat Alanı">
+                    <propertySet>
+                        <simpleValue>Qto_BuildingBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NetFloorArea</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.8 — IfcBuildingStorey" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.8" description="RG 5.8.2026, sayı 33331 ek s.45">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCBUILDINGSTOREY</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Net Kat Alanı">
+                    <propertySet>
+                        <simpleValue>Qto_BuildingStoreyBaseQuantities</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NetFloorArea</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Taşıyıcı Döşeme Üst Kotu">
+                    <propertySet>
+                        <simpleValue>Pset_BuildingStoreyCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>ElevationOfSSLRelative</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.16 — IfcColumn" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.16" description="RG 5.8.2026, sayı 33331 ek s.53">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOLUMN</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_ColumnCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Taşıyıcı">
+                    <propertySet>
+                        <simpleValue>Pset_ColumnCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LoadBearing</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.20 — IfcCovering" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.20" description="RG 5.8.2026, sayı 33331 ek s.58">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCOVERING</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_CoveringCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.21 — IfcCurtainWall" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.21" description="RG 5.8.2026, sayı 33331 ek s.60">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCCURTAINWALL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_CurtainWallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.25 — IfcDoor" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.25" description="RG 5.8.2026, sayı 33331 ek s.64">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Dışarıda">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Acil Çıkış">
+                    <propertySet>
+                        <simpleValue>Pset_DoorCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireExit</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.34 — IfcFooting" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.34" description="RG 5.8.2026, sayı 33331 ek s.73">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCFOOTING</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.35 — IfcFurniture" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.35" description="RG 5.8.2026, sayı 33331 ek s.74">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCFURNITURE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.40 — IfcMember" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.40" description="RG 5.8.2026, sayı 33331 ek s.79">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCMEMBER</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Dışarıda">
+                    <propertySet>
+                        <simpleValue>Pset_MemberCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.41 — IfcOpeningElement" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.41" description="RG 5.8.2026, sayı 33331 ek s.80">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCOPENINGELEMENT</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.48 — IfcRailing" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.48" description="RG 5.8.2026, sayı 33331 ek s.87">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCRAILING</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.49 — IfcRamp" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.49" description="RG 5.8.2026, sayı 33331 ek s.88">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCRAMP</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.52 — IfcRoof" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.52" description="RG 5.8.2026, sayı 33331 ek s.91">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCROOF</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Dışarıda">
+                    <propertySet>
+                        <simpleValue>Pset_RoofCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_RoofCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.55 — IfcSite" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.55" description="RG 5.8.2026, sayı 33331 ek s.94">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSITE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Nesne Tipi">
+                    <name>
+                        <simpleValue>ObjectType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Uzun İsim">
+                    <name>
+                        <simpleValue>LongName</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Referans Kotu">
+                    <name>
+                        <simpleValue>RefElevation</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCREAL" cardinality="required" instructions="Kat Alanı Oranı">
+                    <propertySet>
+                        <simpleValue>Pset_SiteCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FloorAreaRatio</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Saha Kapsama Oranı">
+                    <propertySet>
+                        <simpleValue>Pset_SiteCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>SiteCoverageRatio</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Toplam Alan">
+                    <propertySet>
+                        <simpleValue>Pset_SiteCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>TotalArea</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Adres Satırları">
+                    <propertySet>
+                        <simpleValue>Pset_Address</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>AddressLines</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="İl / Kasaba">
+                    <propertySet>
+                        <simpleValue>Pset_Address</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Town</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Bölge / İlçe">
+                    <propertySet>
+                        <simpleValue>Pset_Address</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Region</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Parsel Numarası">
+                    <propertySet>
+                        <simpleValue>Pset_LandRegistration</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LandID</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Tapu Numarası">
+                    <propertySet>
+                        <simpleValue>Pset_LandRegistration</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>LandTitleID</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Taban Alanı Kat Sayısı">
+                    <propertySet>
+                        <simpleValue>TREpys_ParselOzellikSeti</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>TAKS</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Kat Alanı Kat Sayısı">
+                    <propertySet>
+                        <simpleValue>TREpys_ParselOzellikSeti</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>KAKS</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Ön bahçe mesafesi">
+                    <propertySet>
+                        <simpleValue>TREpys_ParselOzellikSeti</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>CekmeOn</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Yan bahçe mesafesi">
+                    <propertySet>
+                        <simpleValue>TREpys_ParselOzellikSeti</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>CekmeYan</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Arka bahçe mesafesi">
+                    <propertySet>
+                        <simpleValue>TREpys_ParselOzellikSeti</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>CekmeArka</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.56 — IfcSlab" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.56" description="RG 5.8.2026, sayı 33331 ek s.96">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSLAB</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Dışarıda">
+                    <propertySet>
+                        <simpleValue>Pset_SlabCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_SlabCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.58 — IfcSpace" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.58" description="RG 5.8.2026, sayı 33331 ek s.98">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Zemin Kaplaması">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCoveringRequirements</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FloorCovering</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Zemin Kaplama Kalınlığı">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCoveringRequirements</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FloorCoveringThickness</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Duvar Kaplaması">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCoveringRequirements</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>WallCovering</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Duvar Kaplama Kalınlığı">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCoveringRequirements</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>WallCoveringThickness</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Tavan Kaplaması">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCoveringRequirements</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>CeilingCovering</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCREAL" cardinality="required" instructions="Tavan Kaplama Kalınlığı">
+                    <propertySet>
+                        <simpleValue>Pset_SpaceCoveringRequirements</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>CeilingCoveringThickness</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.60 — IfcSpatialZone" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.60" description="RG 5.8.2026, sayı 33331 ek s.101">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPATIALZONE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Açıklama">
+                    <name>
+                        <simpleValue>Description</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Uzun İsim">
+                    <name>
+                        <simpleValue>LongName</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Emsal Durumu">
+                    <propertySet>
+                        <simpleValue>TREpys_EmsalOzellikSeti</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>EmsalDurumu</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="DAHIL" />
+                            <xs:enumeration value="HARIC" />
+                            <xs:enumeration value="DIGER" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.61 — IfcStair" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.61" description="RG 5.8.2026, sayı 33331 ek s.102">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSTAIR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_StairCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Acil Çıkış">
+                    <propertySet>
+                        <simpleValue>Pset_StairCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireExit</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.66 — IfcWall" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.66" description="RG 5.8.2026, sayı 33331 ek s.107">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWALL</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Dışarıda">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Yangın Dayanım Sınıfı">
+                    <propertySet>
+                        <simpleValue>Pset_WallCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>FireRating</simpleValue>
+                    </baseName>
+                </property>
+                <material cardinality="required" instructions="Malzeme İsmi_Dayanım biçimi (örnek: Çelik_S355, Beton_C25)" />
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.67 — IfcWindow" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.67" description="RG 5.8.2026, sayı 33331 ek s.108">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCWINDOW</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Ön Tanımlı Tip">
+                    <name>
+                        <simpleValue>PredefinedType</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Etiket">
+                    <name>
+                        <simpleValue>Tag</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCBOOLEAN" cardinality="required" instructions="Dışarıda">
+                    <propertySet>
+                        <simpleValue>Pset_WindowCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>IsExternal</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-6 Tablo 6.68 — IfcZone" ifcVersion="IFC4X3_ADD2" identifier="EK-6-6.68" description="RG 5.8.2026, sayı 33331 ek s.109">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCZONE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Uzun İsim">
+                    <name>
+                        <simpleValue>LongName</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Nesne Tipi">
+                    <name>
+                        <simpleValue>ObjectType</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

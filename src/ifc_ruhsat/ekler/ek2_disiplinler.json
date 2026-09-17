@@ -1,0 +1,17 @@
+{
+  "kaynak": "RG 5.8.2026 sayı 33331, ek EK-2 Tablo 2.2 (s.3), görsel doğrulama 2026-09-17",
+  "disiplinler": {
+    "MM": "Mimari",
+    "IM": "İç Mimari",
+    "ST": "Statik",
+    "EE": "Elektrik",
+    "MK": "Mekanik",
+    "HR": "Harita",
+    "AL": "Altyapı",
+    "PY": "Peyzaj",
+    "ZE": "Zemin",
+    "YN": "Yangın",
+    "GS": "Güneş Enerji Sistemi",
+    "AK": "Akustik"
+  }
+}

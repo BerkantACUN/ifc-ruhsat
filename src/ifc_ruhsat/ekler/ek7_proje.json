@@ -1,0 +1,253 @@
+{
+  "kaynak": "RG 5.8.2026 sayı 33331, ek EK-7 Tablo 7.1–7.7 (s.221–230), görsel doğrulama 2026-09-17",
+  "tablolar": [
+    {
+      "ifc": "IfcProject",
+      "tablo": "7.1",
+      "sayfa": 222,
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Description",
+          "veriTipi": "M",
+          "turkce": "Açıklama"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "ozellik",
+          "set": "Pset_ProjectCommon",
+          "ad": "ProjectType",
+          "veriTipi": "M",
+          "turkce": "Proje Tipi"
+        }
+      ],
+      "not": "IfcProject.Name EK-1'e göre proje kodu"
+    },
+    {
+      "ifc": "IfcPerson",
+      "tablo": "7.2",
+      "sayfa": 223,
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Identification",
+          "veriTipi": "M",
+          "turkce": "Kimlik No (oda sicil numarası)"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "FamilyName",
+          "veriTipi": "M",
+          "turkce": "Aile Adı"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "GivenName",
+          "veriTipi": "M",
+          "turkce": "Ad"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Roles",
+          "veriTipi": "M",
+          "turkce": "Rol"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcPersonAndOrganization",
+      "tablo": "7.3",
+      "sayfa": 224,
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "ThePerson",
+          "veriTipi": "M",
+          "turkce": "Kişi"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "TheOrganization",
+          "veriTipi": "M",
+          "turkce": "Organizasyon"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcOrganization",
+      "tablo": "7.4",
+      "sayfa": 225,
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Identification",
+          "veriTipi": "S",
+          "turkce": "Firma Vergi No"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Roles",
+          "veriTipi": "M",
+          "turkce": "Rol"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Addresses",
+          "veriTipi": "M",
+          "turkce": "Adres"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcActorRole",
+      "tablo": "7.5",
+      "sayfa": 226,
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Role",
+          "veriTipi": "M",
+          "turkce": "Rol"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "UserDefinedRole",
+          "veriTipi": "M",
+          "turkce": "Kullanıcı Tanımlı Rol"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Description",
+          "veriTipi": "M",
+          "turkce": "Açıklama"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcProjectedCRS",
+      "tablo": "7.6",
+      "sayfa": 227,
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Name",
+          "veriTipi": "M",
+          "turkce": "İsim",
+          "degerler": [
+            "EPSG:5253",
+            "EPSG:5254",
+            "EPSG:5255",
+            "EPSG:5256",
+            "EPSG:5257",
+            "EPSG:5258",
+            "EPSG:5259"
+          ],
+          "not": "TUREF (ITRF96) 3° dilimler"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Description",
+          "veriTipi": "M",
+          "turkce": "Açıklama"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "GeodeticDatum",
+          "veriTipi": "M",
+          "turkce": "Jeodezik Datum",
+          "not": "ITRF96, GRS80"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "VerticalDatum",
+          "veriTipi": "M",
+          "turkce": "Düşey Datum",
+          "not": "TUDKA99"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "MapProjection",
+          "veriTipi": "M",
+          "turkce": "Harita Projeksiyonu",
+          "not": "Transverse Mercator"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "MapZone",
+          "veriTipi": "M",
+          "turkce": "Harita Zonu",
+          "degerler": [
+            "27",
+            "30",
+            "33",
+            "36",
+            "39",
+            "42",
+            "45"
+          ]
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "MapUnit",
+          "veriTipi": "M",
+          "turkce": "Harita Birimi",
+          "not": "METRE"
+        }
+      ]
+    },
+    {
+      "ifc": "IfcMapConversion",
+      "tablo": "7.7",
+      "sayfa": 229,
+      "gerekenler": [
+        {
+          "tur": "oznitelik",
+          "ad": "Eastings",
+          "veriTipi": "S",
+          "turkce": "Doğu"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Northings",
+          "veriTipi": "S",
+          "turkce": "Kuzey"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "OrthogonalHeight",
+          "veriTipi": "S",
+          "turkce": "Düşey Yükselik"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "XAxisAbscissa",
+          "veriTipi": "S",
+          "turkce": "Yerel X Ekseninin Doğu Bileşeni"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "XAxisOrdinate",
+          "veriTipi": "S",
+          "turkce": "Yerel X Ekseninin Kuzey Bileşeni"
+        },
+        {
+          "tur": "oznitelik",
+          "ad": "Scale",
+          "veriTipi": "S",
+          "turkce": "Ölçek Değeri"
+        }
+      ]
+    }
+  ]
+}

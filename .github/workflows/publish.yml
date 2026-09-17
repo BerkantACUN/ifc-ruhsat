@@ -1,0 +1,22 @@
+name: Publish
+
+# PyPI'ye "trusted publishing" ile: pypi.org > proje > Publishing > GitHub
+# (owner BerkantACUN, repo ifc-ruhsat, workflow publish.yml, environment pypi).
+on:
+  release:
+    types: [published]
+
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --all-groups
+      - run: uv run pytest
+      - run: uv build
+      - uses: pypa/gh-action-pypi-publish@release/v1

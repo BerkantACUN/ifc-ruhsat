@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>Mimarlık ve Mühendislik Projelerinin Dijital Olarak Hazırlanması Hakkında Yönetmelik — EK-7</title>
+        <version>0.1.0</version>
+        <description>RG 5.8.2026, sayı 33331 EK-7 tablolarının IDS karşılığı; ifc-ruhsat 0.1.0 tarafından üretildi. Kapsam: kodlanmış tablolar (KAYNAKLAR.md). Malzeme adı biçimi, IfcSystem ilişkisi, kaplama seçeneği ve koordinat dönüşümü IDS dışında, araçta denetlenir.</description>
+        <purpose>Yapı ruhsatı teslim öncesi model kontrolü</purpose>
+        <milestone>Ruhsat</milestone>
+    </info>
+    <specifications>
+        <specification name="EK-7 Tablo 7.1 — IfcProject" ifcVersion="IFC4X3_ADD2" identifier="EK-7-7.1" description="RG 5.8.2026, sayı 33331 ek s.222">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPROJECT</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Açıklama">
+                    <name>
+                        <simpleValue>Description</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <property dataType="IFCLABEL" cardinality="required" instructions="Proje Tipi">
+                    <propertySet>
+                        <simpleValue>Pset_ProjectCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>ProjectType</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="EK-7 Tablo 7.2 — IfcPerson" ifcVersion="IFC4X3_ADD2" identifier="EK-7-7.2" description="RG 5.8.2026, sayı 33331 ek s.223">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPERSON</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Kimlik No (oda sicil numarası)">
+                    <name>
+                        <simpleValue>Identification</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Aile Adı">
+                    <name>
+                        <simpleValue>FamilyName</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Ad">
+                    <name>
+                        <simpleValue>GivenName</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Rol">
+                    <name>
+                        <simpleValue>Roles</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-7 Tablo 7.3 — IfcPersonAndOrganization" ifcVersion="IFC4X3_ADD2" identifier="EK-7-7.3" description="RG 5.8.2026, sayı 33331 ek s.224">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPERSONANDORGANIZATION</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Kişi">
+                    <name>
+                        <simpleValue>ThePerson</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Organizasyon">
+                    <name>
+                        <simpleValue>TheOrganization</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-7 Tablo 7.4 — IfcOrganization" ifcVersion="IFC4X3_ADD2" identifier="EK-7-7.4" description="RG 5.8.2026, sayı 33331 ek s.225">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCORGANIZATION</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Firma Vergi No">
+                    <name>
+                        <simpleValue>Identification</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Rol">
+                    <name>
+                        <simpleValue>Roles</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Adres">
+                    <name>
+                        <simpleValue>Addresses</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-7 Tablo 7.5 — IfcActorRole" ifcVersion="IFC4X3_ADD2" identifier="EK-7-7.5" description="RG 5.8.2026, sayı 33331 ek s.226">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCACTORROLE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Rol">
+                    <name>
+                        <simpleValue>Role</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Kullanıcı Tanımlı Rol">
+                    <name>
+                        <simpleValue>UserDefinedRole</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Açıklama">
+                    <name>
+                        <simpleValue>Description</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-7 Tablo 7.6 — IfcProjectedCRS" ifcVersion="IFC4X3_ADD2" identifier="EK-7-7.6" description="RG 5.8.2026, sayı 33331 ek s.227">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCPROJECTEDCRS</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="İsim">
+                    <name>
+                        <simpleValue>Name</simpleValue>
+                    </name>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="EPSG:5253" />
+                            <xs:enumeration value="EPSG:5254" />
+                            <xs:enumeration value="EPSG:5255" />
+                            <xs:enumeration value="EPSG:5256" />
+                            <xs:enumeration value="EPSG:5257" />
+                            <xs:enumeration value="EPSG:5258" />
+                            <xs:enumeration value="EPSG:5259" />
+                        </xs:restriction>
+                    </value>
+                </attribute>
+                <attribute cardinality="required" instructions="Açıklama">
+                    <name>
+                        <simpleValue>Description</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Jeodezik Datum">
+                    <name>
+                        <simpleValue>GeodeticDatum</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Düşey Datum">
+                    <name>
+                        <simpleValue>VerticalDatum</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Harita Projeksiyonu">
+                    <name>
+                        <simpleValue>MapProjection</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Harita Zonu">
+                    <name>
+                        <simpleValue>MapZone</simpleValue>
+                    </name>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="27" />
+                            <xs:enumeration value="30" />
+                            <xs:enumeration value="33" />
+                            <xs:enumeration value="36" />
+                            <xs:enumeration value="39" />
+                            <xs:enumeration value="42" />
+                            <xs:enumeration value="45" />
+                        </xs:restriction>
+                    </value>
+                </attribute>
+                <attribute cardinality="required" instructions="Harita Birimi">
+                    <name>
+                        <simpleValue>MapUnit</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+        <specification name="EK-7 Tablo 7.7 — IfcMapConversion" ifcVersion="IFC4X3_ADD2" identifier="EK-7-7.7" description="RG 5.8.2026, sayı 33331 ek s.229">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCMAPCONVERSION</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <attribute cardinality="required" instructions="Doğu">
+                    <name>
+                        <simpleValue>Eastings</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Kuzey">
+                    <name>
+                        <simpleValue>Northings</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Düşey Yükselik">
+                    <name>
+                        <simpleValue>OrthogonalHeight</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Yerel X Ekseninin Doğu Bileşeni">
+                    <name>
+                        <simpleValue>XAxisAbscissa</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Yerel X Ekseninin Kuzey Bileşeni">
+                    <name>
+                        <simpleValue>XAxisOrdinate</simpleValue>
+                    </name>
+                </attribute>
+                <attribute cardinality="required" instructions="Ölçek Değeri">
+                    <name>
+                        <simpleValue>Scale</simpleValue>
+                    </name>
+                </attribute>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

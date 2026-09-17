@@ -1,0 +1,152 @@
+{
+  "kaynak": "RG 5.8.2026 sayı 33331, ek EK-9 Tablo 9.1 Model Kalite Kontrol Formu (mimari disiplin), s.238–239, görsel doğrulama 2026-09-17",
+  "maddeler": [
+    {
+      "no": 1,
+      "kategori": "Genel",
+      "baslik": "Dosya Boyutu",
+      "soru": "Dosya boyutu, Bakanlıkça belirlenen kısıtlamalara uygun mu?",
+      "bolum": "GENEL KONTROL"
+    },
+    {
+      "no": 2,
+      "kategori": "Genel",
+      "baslik": "Proje Bilgileri",
+      "soru": "Proje bilgileri Yönetmeliğin 13 üncü maddesinde belirtilen esaslara göre dolduruldu mu?",
+      "bolum": "GENEL KONTROL"
+    },
+    {
+      "no": 3,
+      "kategori": "Genel",
+      "baslik": "Proje ve Dosya İsimlendirmesi",
+      "soru": "Proje ve dosya isimlendirmesi Yönetmeliğin 6 ncı maddesine uygun mu?",
+      "bolum": "İSİMLENDİRME"
+    },
+    {
+      "no": 4,
+      "kategori": "Mimari",
+      "baslik": "Mahal No ve Mahal İsmi",
+      "soru": "Mahal numaraları ve mahal isimlendirmesi Yönetmeliğin 10 uncu maddesine uygun mu?",
+      "bolum": "İSİMLENDİRME"
+    },
+    {
+      "no": 5,
+      "kategori": "Genel",
+      "baslik": "Varlıklar",
+      "soru": "Varlıkların isimlendirmesi Yönetmeliğin 11 inci maddesine uygun mu?",
+      "bolum": "İSİMLENDİRME"
+    },
+    {
+      "no": 6,
+      "kategori": "Genel",
+      "baslik": "Koordinat Sistemi",
+      "soru": "Model doğru koordinat sisteminde konumlandırıldı mı? Bu koordinat verileri Yönetmeliğin 13 üncü maddesinde verilen ilgili proje özniteliklerini kullanılarak atandı mı?",
+      "bolum": "MODEL YAPILANMASI"
+    },
+    {
+      "no": 7,
+      "kategori": "Genel",
+      "baslik": "Gelişim seviyesi",
+      "soru": "Modelde yer alan varlıklar Yönetmeliğin 14 üncü maddesinde verilen gelişim seviyesine uygun olarak modellendi mi?",
+      "bolum": "MODEL YAPILANMASI"
+    },
+    {
+      "no": 8,
+      "kategori": "Genel",
+      "baslik": "IFC Sınıfları",
+      "soru": "Modelde yer alan varlıklar Yönetmeliğin 12 inci maddesinde tanımlanan \"Zorunlu IFC Sınıfları\" listesindeki doğru sınıflar kullanılarak tanımlandı mı?",
+      "bolum": "MODEL YAPILANMASI"
+    },
+    {
+      "no": 9,
+      "kategori": "Genel",
+      "baslik": "IFC Sınıfları",
+      "soru": "Yönetmeliğin 13 üncü maddesinde belirtilen projedeki mevcut \"Zorunlu IFC Sınıfları\" için zorunlu öznitelikler ve özellikler tanımlandı mı?",
+      "bolum": "MODEL YAPILANMASI"
+    },
+    {
+      "no": 10,
+      "kategori": "Genel",
+      "baslik": "Emsal hesabı",
+      "soru": "Mahal (IfcSpace) ve Mekansal Zon (IfcSpatialZone) alanları emsal hesap tablolarıyla uyumlu mu?",
+      "bolum": "MODEL YAPILANMASI"
+    },
+    {
+      "no": 11,
+      "kategori": "Genel",
+      "baslik": "IFC Sınıfları",
+      "soru": "Modelde \"Proje\", \"Saha\", \"Bina\" ve en az bir \"Bina Katı\" ile ilgili IFC Sınıfları bulunuyor mu?",
+      "bolum": "MODEL YAPILANMASI"
+    },
+    {
+      "no": 12,
+      "kategori": "Mimari",
+      "baslik": "Mahal",
+      "soru": "Mimari modelde \"Mahal\" (IfcSpace) IFC Kategorisi yer alıyor mu?",
+      "bolum": "DİSİPLİN KONTROLLERİ"
+    },
+    {
+      "no": 13,
+      "kategori": "Mimari",
+      "baslik": "Mahal",
+      "soru": "Mahaller diğer mahallerle örtüşmeyecek şekilde ve doğru katta modellendi mi?",
+      "bolum": "DİSİPLİN KONTROLLERİ"
+    },
+    {
+      "no": 14,
+      "kategori": "Mimari",
+      "baslik": "Mahal",
+      "soru": "Mahaller kapalı olarak ve üst sınırları doğru tanımlandı mı?",
+      "bolum": "DİSİPLİN KONTROLLERİ"
+    },
+    {
+      "no": 15,
+      "kategori": "Genel",
+      "baslik": "Varlıklar",
+      "soru": "Varlıklar doğru katta veya doğru kotta modellendi mi?",
+      "bolum": "DİSİPLİN KONTROLLERİ"
+    },
+    {
+      "no": 16,
+      "kategori": "Genel",
+      "baslik": "Varlıklar",
+      "soru": "Modelden yinelenen varlıklar kaldırıldı mı?",
+      "bolum": "DİSİPLİN KONTROLLERİ"
+    },
+    {
+      "no": 17,
+      "kategori": "Genel",
+      "baslik": "IFC Sınıfları",
+      "soru": "Model IFC'ye uygun olarak oluşturuldu mu (IfcWall, IfcSlab, IfcWindow vb. sınıflar doğru atandı mı)?",
+      "bolum": "TESLİM VE FORMAT"
+    },
+    {
+      "no": 18,
+      "kategori": "Genel",
+      "baslik": "IFC Versiyonu",
+      "soru": "Model dosyası, teslime ilişkin kısıtlamalarda tanımlanan IFC versiyonunda teslim edildi mi? Dosya uzantısı IFC mi?",
+      "bolum": "TESLİM VE FORMAT"
+    },
+    {
+      "no": 19,
+      "kategori": "Genel",
+      "baslik": "Ön Tanımlı Tip",
+      "soru": "Varlıklar IFC'de doğru Ön Tanımlı Tip (Predefined Type) kullanılarak temsil edildi mi?",
+      "bolum": "TESLİM VE FORMAT"
+    },
+    {
+      "no": 20,
+      "kategori": "Genel",
+      "baslik": "Özellikler",
+      "soru": "Özellikler doğru P_set'ler altında listelendi mi?",
+      "bolum": "TESLİM VE FORMAT"
+    },
+    {
+      "no": 21,
+      "kategori": "Genel",
+      "baslik": "PDF ve IFC uyumu",
+      "soru": "Teslim edilen PDF paftaları BIM modelinden üretildi mi?",
+      "bolum": "TESLİM VE FORMAT"
+    }
+  ]
+}

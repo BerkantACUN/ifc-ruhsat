@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: uv sync --all-groups
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest --cov=src --cov-report=term --cov-fail-under=80
+      - name: IDS files are up to date
+        run: |
+          uv run ifc-ruhsat ids --klasor .ids-check
+          uv run python -c "import sys,re;a=open('ids/tr-ruhsat-ek6.ids',encoding='utf-8').read();b=open('.ids-check/tr-ruhsat-ek6.ids',encoding='utf-8').read();sys.exit(0 if re.sub(r'<date>.*?</date>','',a)==re.sub(r'<date>.*?</date>','',b) else 'ids/ eski: uv run ifc-ruhsat ids')"
+      - name: CLI on the examples
+        run: |
+          uv run ifc-ruhsat kontrol ornekler/123456_00_MM_GNEL_MD_BIM_000_01_000.ifc
+          uv run ifc-ruhsat ozet ornekler/hatali_ornek.ifc
