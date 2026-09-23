@@ -2,6 +2,12 @@
 
 Biçim [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), sürümleme [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- Alt komut verilmeden çalıştırıldığında (stdin bir boruysa) doğrudan MCP sunucusu olarak başlar; bazı barındırıcılar paketi `ifc-ruhsat` diye çağırıyor. Terminalde davranış değişmedi.
+
 ## [0.2.1] — 2026-09-17
 
 Halka açık gerçek modellerle (buildingSMART IFC 4.3 örneği, Revit 2021 konut, IfcOpenShell örnek evi) ilk tur; rapor okunurluğu ve hız.

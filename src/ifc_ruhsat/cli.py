@@ -10,6 +10,20 @@ from pathlib import Path
 from ifc_ruhsat import SURUM, YONETMELIK
 
 
+def _komutlari_coz(argv: list[str] | None) -> list[str]:
+    """Argümansız çağrı: uçta bir MCP istemcisi varsa (stdin boru) sunucuyu başlat.
+    Bazı MCP barındırıcıları ve dizin derleyicileri paketi alt komut vermeden
+    çalıştırıyor; insan terminalinde davranış değişmez, yardım basılır."""
+    verilen = list(sys.argv[1:] if argv is None else argv)
+    if verilen:
+        return verilen
+    try:
+        etkilesimli = sys.stdin.isatty()
+    except (AttributeError, ValueError):
+        etkilesimli = False
+    return verilen if etkilesimli else ["mcp"]
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
         prog="ifc-ruhsat",
@@ -43,7 +57,7 @@ def main(argv: list[str] | None = None) -> int:
 
     alt.add_parser("mcp", help="MCP sunucusunu (stdio) başlat")
 
-    a = p.parse_args(argv)
+    a = p.parse_args(_komutlari_coz(argv))
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     if a.komut == "kontrol":

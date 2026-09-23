@@ -49,3 +49,13 @@ def test_mcp_araclari_listelenir_ve_calisir(iyi_dosya):
     assert mcp_server.ek5_siniflar("duvar")["zorunlu"][0]["kod"] == "DVR"
     assert "33331" in mcp_server.yonetmelik_bilgisi()["resmiGazete"]
     assert mcp_server.ek9_formu(str(iyi_dosya)).startswith("# EK-9")
+
+
+def test_argumansiz_calisinca_mcp_sunucusu_secilir(monkeypatch):
+    from ifc_ruhsat.cli import _komutlari_coz
+
+    monkeypatch.setattr("sys.stdin", type("S", (), {"isatty": lambda self: False})())
+    assert _komutlari_coz([]) == ["mcp"]
+    assert _komutlari_coz(["ozet", "a.ifc"]) == ["ozet", "a.ifc"]
+    monkeypatch.setattr("sys.stdin", type("S", (), {"isatty": lambda self: True})())
+    assert _komutlari_coz([]) == []
