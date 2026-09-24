@@ -412,7 +412,7 @@ def http_calistir(host: str | None = None, port: int | None = None) -> None:
     host = host or os.environ.get("IFC_RUHSAT_HOST") or VARSAYILAN_HOST
     port = port or int(os.environ.get("IFC_RUHSAT_PORT") or VARSAYILAN_PORT)
     uygulama = http_uygulamasi(os.environ.get("IFC_RUHSAT_API_KEY") or None, host)
-    uvicorn.run(uygulama, host=host, port=port, proxy_headers=True, forwarded_allow_ips="*")
+    uvicorn.run(uygulama, host=host, port=port)
 
 
 def calistir() -> None:

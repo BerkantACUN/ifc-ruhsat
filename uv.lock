@@ -680,7 +680,7 @@ dev = [
 requires-dist = [
     { name = "ifcopenshell", specifier = ">=0.8.4" },
     { name = "ifctester", specifier = ">=0.8.4" },
-    { name = "mcp", specifier = ">=1.10" },
+    { name = "mcp", specifier = ">=2.0" },
 ]
 
 [package.metadata.requires-dev]

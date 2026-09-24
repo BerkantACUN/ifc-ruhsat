@@ -18,7 +18,7 @@ classifiers = [
 dependencies = [
   "ifcopenshell>=0.8.4",
   "ifctester>=0.8.4",
-  "mcp>=1.10",
+  "mcp>=2.0",
 ]
 
 [project.urls]
