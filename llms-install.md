@@ -67,7 +67,7 @@ Kullanıcı kendi barındırdığı bir sunucu adresi verdiyse (bkz. README, "Uz
 }
 ```
 
-Uzak sunucu kullanıcının diskini göremez: modeli `dosya` yerine `ifc_metni` (dosyanın metni) ve `dosya_adi` ile gönderin.
+Uzak sunucuda `dosya` parametresi güvenlik gereği kapalıdır (verilirse `uzak-dosya-kapali` hatası döner): modeli `ifc_metni` (dosyanın metni) ve `dosya_adi` ile gönderin.
 
 ## 4. Doğrulama
 
@@ -84,5 +84,6 @@ Kullanıcının bir IFC dosyası varsa: `yonetmelik_kontrolu` → `{"dosya": "<t
 |---|---|
 | `uvx: command not found` | 1. adım; ya da `command` alanına uvx'in tam yolu |
 | İlk çağrıda zaman aşımı | 2. adımdaki `uvx ifc-ruhsat --version` ile paketi önceden indirin |
-| `dosya yok: …` | `dosya` tam (mutlak) yol olmalı; uzak sunucuda `ifc_metni` kullanın |
+| `dosya yok: …` | `dosya` tam (mutlak) yol olmalı |
+| `uzak-dosya-kapali` | Uzak sunucudasınız; modeli `ifc_metni` ile gönderin |
 | Python sürüm hatası | uv kendi Python'unu indirir; `pip` yolu seçildiyse Python ≥ 3.10 gerekir |
