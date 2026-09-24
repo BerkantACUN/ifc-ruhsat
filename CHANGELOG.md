@@ -4,6 +4,17 @@ Biçim [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), sürümleme [Se
 
 ## [Unreleased]
 
+### Added
+
+- `ifc-ruhsat mcp --http`: MCP Python SDK'nın streamable HTTP taşımasıyla uzak sunucu (yol `/mcp`, durumsuz). Adres/port `--host`/`--port` ya da `IFC_RUHSAT_HOST`/`IFC_RUHSAT_PORT` (varsayılan `0.0.0.0:8080`); `IFC_RUHSAT_API_KEY` verilirse `X-API-Key` başlığı zorunlu.
+- Model araçlarına `ifc_metni` ve `dosya_adi` parametreleri: uzak sunucuya model yol yerine metin olarak gönderilir.
+- Dockerfile (Python 3.12 slim, çok aşamalı, root olmayan kullanıcı, IfcOpenShell dahil) ve `ghcr.io/berkantacun/ifc-ruhsat` imajını `v*` etiketlerinde yayınlayan Docker iş akışı.
+- `llms-install.md`: Cline gibi ajanların sunucuyu kendi başına kurması için adım adım rehber.
+
+### Changed
+
+- Araç açıklamaları yeniden yazıldı: ne yaptığı, ne zaman kullanılacağı, girdi örnekleri ve dönüş biçimi; her parametrenin şemada açıklaması ve örnekleri var. Bütün araçlara başlık ve eksiksiz ToolAnnotations (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`).
+
 ### Fixed
 
 - Alt komut verilmeden çalıştırıldığında (stdin bir boruysa) doğrudan MCP sunucusu olarak başlar; bazı barındırıcılar paketi `ifc-ruhsat` diye çağırıyor. Terminalde davranış değişmedi.

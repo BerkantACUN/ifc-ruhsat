@@ -1,4 +1,4 @@
-"""Komut satırı: `ifc-ruhsat kontrol model.ifc`, `ozet`, `ek9`, `ids`, `mcp`."""
+"""Komut satırı: `ifc-ruhsat kontrol model.ifc`, `ozet`, `ek9`, `ids`, `mcp [--http]`."""
 
 from __future__ import annotations
 
@@ -55,7 +55,14 @@ def main(argv: list[str] | None = None) -> int:
     i = alt.add_parser("ids", help="EK-6/EK-7'yi buildingSMART IDS dosyaları olarak üret")
     i.add_argument("--klasor", default="ids")
 
-    alt.add_parser("mcp", help="MCP sunucusunu (stdio) başlat")
+    m = alt.add_parser("mcp", help="MCP sunucusunu başlat (varsayılan stdio; --http ile uzak)")
+    m.add_argument(
+        "--http",
+        action="store_true",
+        help="streamable HTTP (yol /mcp); IFC_RUHSAT_API_KEY varsa X-API-Key zorunlu",
+    )
+    m.add_argument("--host", help="dinlenecek adres (IFC_RUHSAT_HOST, varsayılan 0.0.0.0)")
+    m.add_argument("--port", type=int, help="port (IFC_RUHSAT_PORT, varsayılan 8080)")
 
     a = p.parse_args(_komutlari_coz(argv))
     if hasattr(sys.stdout, "reconfigure"):
@@ -80,9 +87,12 @@ def main(argv: list[str] | None = None) -> int:
             print(yol)
         return 0
     if a.komut == "mcp":
-        from ifc_ruhsat.mcp_server import calistir
+        from ifc_ruhsat import mcp_server
 
-        calistir()
+        if a.http:
+            mcp_server.http_calistir(a.host, a.port)
+        else:
+            mcp_server.calistir()
         return 0
     return 2
 

@@ -1,0 +1,17 @@
+.git
+.github
+.venv
+.tmp
+.ids-check
+**/__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.coverage
+htmlcov
+dist
+build
+tests
+ornekler
+assets
+ids
