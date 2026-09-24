@@ -98,7 +98,7 @@ docker run --rm -p 8080:8080 -e IFC_RUHSAT_API_KEY=gizli ghcr.io/berkantacun/ifc
 }
 ```
 
-Uzak sunucu istemcinin diskini göremez; modeli `ifc_metni` ile gönderin (sunucu onu geçici bir klasörde açar, iş bitince siler). İmaj Python 3.12 slim üzerinde, root olmayan kullanıcıyla (uid 10001) çalışır. Anahtar yalnız basit bir paylaşımlı sırdır; sunucuyu internete açarken TLS sonlandıran bir ters vekil (Container Apps ingress gibi) arkasında çalıştırın.
+Uzak modda `dosya` parametresi güvenlik gereği **kapalıdır**: sunucu kendi diskinden hiçbir yol okumaz, verilirse araç `uzak-dosya-kapali` hatası döner. Modeli `ifc_metni` ile gönderin (sunucu onu geçici bir klasörde açar, iş bitince siler). İmaj Python 3.12 slim üzerinde, root olmayan kullanıcıyla (uid 10001) çalışır. Anahtar yalnız basit bir paylaşımlı sırdır; sunucuyu internete açarken TLS sonlandıran bir ters vekil (Container Apps ingress gibi) arkasında çalıştırın.
 
 ## Ne denetleniyor
 

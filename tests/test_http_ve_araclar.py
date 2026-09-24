@@ -139,6 +139,9 @@ def test_http_varsayilanlari_ve_ortam(monkeypatch):
     import uvicorn
 
     goruldu = {}
+    monkeypatch.setattr(
+        mcp_server, "_UZAK_MOD", False
+    )  # http_uygulamasi() açar; test sonrası geri al
     monkeypatch.setattr(uvicorn, "run", lambda uygulama, **kw: goruldu.update(kw, app=uygulama))
     for k in ("IFC_RUHSAT_HOST", "IFC_RUHSAT_PORT", "IFC_RUHSAT_API_KEY"):
         monkeypatch.delenv(k, raising=False)
@@ -188,3 +191,59 @@ def test_ifc_metni_ile_kontrol(iyi_dosya, kotu_dosya):
     assert form.startswith("# EK-9") and "`ad.ifc`" in form
     with pytest.raises(ValueError):
         mcp_server.model_ozeti()
+
+
+def _arac_cagir(port: int, ad: str, argumanlar: dict) -> dict:
+    durum, govde = _istek(
+        port,
+        {
+            "jsonrpc": "2.0",
+            "id": 3,
+            "method": "tools/call",
+            "params": {"name": ad, "arguments": argumanlar},
+        },
+    )
+    assert durum == 200, govde
+    veri = next(s[5:] for s in govde.splitlines() if s.startswith("data:"))
+    return json.loads(veri)["result"]
+
+
+@pytest.mark.parametrize("arac", ["model_ozeti", "yonetmelik_kontrolu", "ek9_formu"])
+def test_http_dosya_yolu_kapali(sunucu, iyi_dosya, arac):
+    port = sunucu()
+    # Sunucunun diskinde gerçekten var olan, okunabilir bir IFC dosyası: yine de okunmamalı
+    sonuc = _arac_cagir(port, arac, {"dosya": str(iyi_dosya)})
+    metin = json.dumps(sonuc, ensure_ascii=False)
+    assert sonuc.get("isError") is True, metin
+    assert "uzak-dosya-kapali" in metin and "ifc_metni kullanın" in metin
+    assert "IFC4X3" not in metin and "EK-9" not in metin.split("uzak-dosya-kapali")[0]
+    # ifc_metni ile birlikte verilse de yol kabul edilmez
+    sonuc = _arac_cagir(
+        port,
+        arac,
+        {"dosya": "/etc/passwd", "ifc_metni": iyi_dosya.read_text(encoding="utf-8")},
+    )
+    assert sonuc.get("isError") is True
+    # ifc_metni tek başına çalışmaya devam eder
+    sonuc = _arac_cagir(port, arac, {"ifc_metni": iyi_dosya.read_text(encoding="utf-8")})
+    assert not sonuc.get("isError"), json.dumps(sonuc, ensure_ascii=False)[:500]
+
+
+def test_uzak_modda_yol_reddi_ve_yerelde_yol(monkeypatch, iyi_dosya):
+    assert mcp_server.model_ozeti(str(iyi_dosya))["schema"] == "IFC4X3"  # yerel (stdio)
+    monkeypatch.setattr(mcp_server, "_UZAK_MOD", True)
+    for cagri in (
+        lambda: mcp_server.model_ozeti(str(iyi_dosya)),
+        lambda: mcp_server.yonetmelik_kontrolu(str(iyi_dosya)),
+        lambda: mcp_server.ek9_formu(dosya=str(iyi_dosya), ifc_metni="ISO-10303-21;"),
+    ):
+        with pytest.raises(mcp_server.UzakDosyaHatasi, match="Uzak modda dosya yolu kapalı"):
+            cagri()
+    metin = iyi_dosya.read_text(encoding="utf-8")
+    assert mcp_server.model_ozeti(ifc_metni=metin)["schema"] == "IFC4X3"
+
+
+def test_http_uygulamasi_uzak_modu_acar(monkeypatch):
+    monkeypatch.setattr(mcp_server, "_UZAK_MOD", False)
+    mcp_server.http_uygulamasi()
+    assert mcp_server._UZAK_MOD is True

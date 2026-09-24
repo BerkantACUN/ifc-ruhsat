@@ -22,8 +22,17 @@ from ifc_ruhsat import SURUM, YONETMELIK, veri
 
 try:  # mcp 2.x
     from mcp.server.mcpserver import MCPServer
+    from mcp.server.mcpserver.exceptions import ToolError
 except ImportError:  # mcp 1.x
     from mcp.server.fastmcp import FastMCP as MCPServer
+    from mcp.server.fastmcp.exceptions import ToolError
+
+UZAK_DOSYA_MESAJI = "Uzak modda dosya yolu kapalı, ifc_metni kullanın"
+_UZAK_MOD = False  # http_uygulamasi() kurulduğunda True: sunucu kendi diskinden okumaz
+
+
+class UzakDosyaHatasi(ToolError):
+    """Uzak (HTTP) modda yol parametresi verildi; istemciye isError olarak döner."""
 
 
 def _salt_okur(baslik: str) -> ToolAnnotations:
@@ -46,7 +55,7 @@ mcp = MCPServer(
         "Model için önce `model_ozeti` (hızlı kimlik), sonra `yonetmelik_kontrolu` (bulgular) ya da "
         "`ek9_formu` (resmî form) çağır. Model yoksa `ek5_siniflar`, `ek6_gerekenler` ve "
         "`yonetmelik_bilgisi` yönetmeliğin kendisini anlatır. Yerel sunucuda `dosya` yol alır; "
-        "uzak sunucuda modeli `ifc_metni` ile gönder. Her bulgu yönetmelik maddesi ve EK-9 "
+        "uzak sunucuda `dosya` kapalıdır (uzak-dosya-kapali hatası), modeli `ifc_metni` ile gönder. Her bulgu yönetmelik maddesi ve EK-9 "
         "satırıyla gelir; 'elle' seviyesi makinece denetlenemeyen satırdır, uygun sayma. "
         "Sonuçları kullanıcıya madde numarasıyla aktar, hukuki değerlendirme yapma."
     ),
@@ -56,8 +65,9 @@ Dosya = Annotated[
     str | None,
     Field(
         description=(
-            "Sunucunun erişebildiği .ifc dosyasının yolu (yerel stdio kullanımında istemcinin "
-            "diskindeki yol). `ifc_metni` verilirse yok sayılır."
+            "Yerel (stdio) sunucuda .ifc dosyasının yolu (istemcinin diskindeki yol). Uzak "
+            "(HTTP) sunucuda kapalıdır: verilirse `uzak-dosya-kapali` hatası döner, `ifc_metni` "
+            "kullanın. Yerelde `ifc_metni` verilirse yok sayılır."
         ),
         examples=["C:/proje/123456_00_MM_GNEL_MD_BIM_000_01_000.ifc", "/home/ali/A_blok.ifc"],
     ),
@@ -98,7 +108,11 @@ Disiplin = Annotated[
 def _model_yolu(
     dosya: str | None, ifc_metni: str | None, dosya_adi: str | None
 ) -> Iterator[tuple[Path, str]]:
-    """(okunacak yol, raporda görünecek ad). Metin geldiyse geçici klasöre özgün adıyla yazar."""
+    """(okunacak yol, raporda görünecek ad). Metin geldiyse geçici klasöre özgün adıyla yazar.
+    Uzak modda `dosya` hiç kabul edilmez (ifc_metni ile birlikte verilse de): uzaktaki bir
+    çağıran kapsayıcıdaki herhangi bir dosyayı okutamasın."""
+    if dosya and _UZAK_MOD:
+        raise UzakDosyaHatasi(f"uzak-dosya-kapali: {UZAK_DOSYA_MESAJI}")
     if ifc_metni:
         ad = Path(dosya_adi or "model.ifc").name or "model.ifc"
         with tempfile.TemporaryDirectory(prefix="ifc-ruhsat-") as klasor:
@@ -127,6 +141,9 @@ def model_ozeti(
     Dönüş (JSON nesne): `dosya`, `boyutMB`, `schema` (yönetmelik IFC4X3 ister), `yazilim`
     (üreten program ve sürümü), `proje`, `saha[]`, `bina[]`, `katlar[]` (kat adları),
     `mahalSayisi`, `varlikSayisi` ve `sinifSayilari` (IFC sınıfı → varlık sayısı).
+
+    Uzak (HTTP) sunucuda `dosya` kapalıdır: verilirse araç `uzak-dosya-kapali` hatası (isError)
+    döner; modeli `ifc_metni` ile gönderin.
 
     English: identity of an IFC file — schema, authoring software, project/site/building/storey
     names and entity counts per class. Read-only, no rule checks.
@@ -167,6 +184,9 @@ def yonetmelik_kontrolu(
     "EK-6 Tablo 6.66"), `ek9` (EK-9 satır no), `varliklar` (GlobalId listesi, kısaltılmış) ve
     `sayi` (etkilenen varlık sayısı). Büyük modellerde birkaç saniye sürebilir.
 
+    Uzak (HTTP) sunucuda `dosya` kapalıdır: verilirse araç `uzak-dosya-kapali` hatası (isError)
+    döner; modeli `ifc_metni` ile gönderin.
+
     English: checks an IFC model against the Turkish building-permit BIM regulation; returns
     findings with severity, article reference, Annex 9 row and affected GlobalIds.
     """
@@ -197,6 +217,9 @@ def ek9_formu(
     Dönüş (Markdown metin): başlık, model/şema/tarih satırı, 21 satırlık tablo (her satır
     Evet / Hayır / Kısmen / Elle ve dayanağı olan madde) ve veri kaynakları. Olduğu gibi
     kullanıcıya gösterilebilir ya da .md dosyasına yazılabilir.
+
+    Uzak (HTTP) sunucuda `dosya` kapalıdır: verilirse araç `uzak-dosya-kapali` hatası (isError)
+    döner; modeli `ifc_metni` ile gönderin.
 
     English: renders the regulation's Annex 9 model quality-control form for the model as
     Markdown (21 rows, Yes / No / Partial / Manual with the legal basis).
@@ -375,7 +398,10 @@ class _AnahtarKapisi:
 
 def http_uygulamasi(api_anahtari: str | None = None, host: str = VARSAYILAN_HOST):
     """Streamable HTTP ASGI uygulaması (yol: /mcp). Durumsuz: her istek bağımsız, böylece
-    birden çok kopya yük dengeleyici arkasında oturum yapışkanlığı olmadan çalışır."""
+    birden çok kopya yük dengeleyici arkasında oturum yapışkanlığı olmadan çalışır. Bu süreçte
+    `dosya` parametresi kapanır: uzaktaki bir çağıran sunucunun diskindeki dosyaları okuyamasın."""
+    global _UZAK_MOD
+    _UZAK_MOD = True
     uygulama = mcp.streamable_http_app(stateless_http=True, host=host)
     return _AnahtarKapisi(uygulama, api_anahtari) if api_anahtari else uygulama
 
