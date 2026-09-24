@@ -41,7 +41,7 @@ pip install ifc-ruhsat
 | `ifc-ruhsat ek9 model.ifc` | EK-9 Model Kalite Kontrol Formu (Tablo 9.1), Markdown |
 | `ifc-ruhsat ozet model.ifc` | Şema, üreten yazılım, proje/saha/bina/katlar, sınıf sayıları |
 | `ifc-ruhsat ids` | EK-6 ve EK-7'yi buildingSMART **IDS** dosyası olarak yazar ([`ids/`](ids/)) — Solibri, BIMcollab Zoom, usBIM.IDS, ifctester okur |
-| `ifc-ruhsat mcp` | MCP sunucusu (stdio) |
+| `ifc-ruhsat mcp [--http] [--host H] [--port P]` | MCP sunucusu (stdio; `--http` ile streamable HTTP) |
 
 ## MCP ile kullanım
 
@@ -66,7 +66,39 @@ Sonra asistanınıza sorun: *"C:\proje\A_blok.ifc yönetmeliğe uyuyor mu, EK-9 
 | `ek6_gerekenler` | Bir sınıf için zorunlu öznitelik ve özellik setleri (EK-6 / EK-7) |
 | `yonetmelik_bilgisi` | Dayanak, kademeli takvim, veri kaynakları |
 
-Sunucu yalnızca verilen dosyayı okur; ağa hiçbir şey göndermez, hiçbir şey yazmaz.
+Model araçları (`model_ozeti`, `yonetmelik_kontrolu`, `ek9_formu`) dosyayı `dosya` (yol) ya da `ifc_metni` (IFC metni, + `dosya_adi`) ile alır. Bütün araçlar salt okurdur ve MCP ek açıklamalarını (`readOnlyHint`, `destructiveHint: false`, `idempotentHint`, `openWorldHint: false`) taşır; her aracın açıklamasında ne zaman kullanılacağı, girdi örnekleri ve dönüş biçimi yazar.
+
+Sunucu yalnızca verilen dosyayı okur; ağa hiçbir şey göndermez, kalıcı bir şey yazmaz. Cline gibi ajanlar kurulumu [llms-install.md](llms-install.md) ile kendi başına yapabilir.
+
+## Uzak sunucu (Docker)
+
+`ifc-ruhsat mcp --http` sunucuyu streamable HTTP ile `http://<host>:8080/mcp` adresinde açar (durumsuz; birden çok kopya yük dengeleyici arkasında çalışır). Hazır imaj her `v*` sürümünde yayımlanır:
+
+```bash
+docker run --rm -p 8080:8080 -e IFC_RUHSAT_API_KEY=gizli ghcr.io/berkantacun/ifc-ruhsat
+```
+
+| Ortam değişkeni | Varsayılan | Anlamı |
+|---|---|---|
+| `IFC_RUHSAT_HOST` | `0.0.0.0` | Dinlenecek adres (Azure Container Apps IPv6 desteklemediği için IPv4) |
+| `IFC_RUHSAT_PORT` | `8080` | Port |
+| `IFC_RUHSAT_API_KEY` | — | Verilirse her istekte `X-API-Key` başlığı bu değere eşit olmalı, yoksa 401 |
+
+İstemci tarafı:
+
+```json
+{
+  "mcpServers": {
+    "ifc-ruhsat": {
+      "type": "http",
+      "url": "https://sunucu.example.com/mcp",
+      "headers": { "X-API-Key": "gizli" }
+    }
+  }
+}
+```
+
+Uzak sunucu istemcinin diskini göremez; modeli `ifc_metni` ile gönderin (sunucu onu geçici bir klasörde açar, iş bitince siler). İmaj Python 3.12 slim üzerinde, root olmayan kullanıcıyla (uid 10001) çalışır. Anahtar yalnız basit bir paylaşımlı sırdır; sunucuyu internete açarken TLS sonlandıran bir ters vekil (Container Apps ingress gibi) arkasında çalıştırın.
 
 ## Ne denetleniyor
 
