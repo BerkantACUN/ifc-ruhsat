@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ifc-ruhsat": {
+      "command": "uvx",
+      "args": ["ifc-ruhsat", "mcp"]
+    }
+  }
+}
